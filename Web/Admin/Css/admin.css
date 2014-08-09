@@ -1,0 +1,68 @@
+﻿* {
+    margin: 0;
+}
+
+#header th, #header td ,#mainContent td{
+    padding: 0;
+}
+#mainContent td {
+    border-collapse: separate;
+}
+
+.container {
+    width: auto;
+}
+
+.searchTable {
+    margin-bottom:10px;
+}
+
+#main {
+    overflow: hidden;
+    zoom: 1;
+}
+
+#leftMenu {
+    width: 200px;
+}
+
+#mainContent {
+    margin-left:210px;
+}
+
+    #mainContent .list2 td {
+        padding:6px 6px 6px 12px;
+    }
+
+#checkAll {
+    vertical-align:middle;
+    margin-right:2px;
+}
+
+#mainContent .formView td {
+    padding-bottom: 10px;
+}
+.content {
+    display: none;
+}
+
+#footer {
+    border-top-color: #3C6282;
+}
+
+.batchDelete {
+    margin-top: 3px;
+}
+
+
+#welcome h3 {
+    font-size:16px;
+    color:#333;
+    margin-bottom:10px;
+}
+
+
+#welcome p {
+    font-size:14px;
+    margin-bottom:10px;
+}

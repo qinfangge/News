@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login.master.cs" Inherits="CMS.Web.Login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <link type="text/css" rel="stylesheet" href="css/main_repair.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div class="container">
+        <header class="alpha">
+            <div class="middle" style="background: none;">
+                <a href="/"><h1 class="f1">鄂尔多斯产权交易中心</h1></a>
+            </div>
+        </header>
+        <!--内容开始-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    <!--内容结束-->
+        <div class="ter" style="background: none;">
+            <div class="footer">
+                <div class="ff_bottom">
+                    <div class="inner f1000">
+                        <div class="bb_fr">
+                            <div class="block_social_footer">
+                                <ul>
+                                    <li><a class="tw" href="#"></a></li>
+                                    <li><a class="rss" href="#"></a></li>
+                                    <li><a class="fb" href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block_copyrights">
+                             <p>
+                                        <asp:Literal ID="Address" runat="server"></asp:Literal>
+                                        传真：<asp:Literal ID="Fax" runat="server"></asp:Literal><br />
+                                        客服电话：<asp:Literal ID="Mobile" runat="server"></asp:Literal>(<asp:Literal ID="Contactor" runat="server"></asp:Literal>)<br />
+                                        QQ:<asp:Literal ID="QQ" runat="server"></asp:Literal>
+                                        邮编：<asp:Literal ID="Zip" runat="server"></asp:Literal><a class="icp"><br />
+                                            鄂尔多斯产权交易中心 版权所有 蒙ICP备10006454号 </a>
+                                    </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>

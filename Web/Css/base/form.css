@@ -1,0 +1,175 @@
+﻿.formView
+{
+    1width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+.formView select
+{
+    margin-right: 5px;
+   
+}
+.formView
+{
+    font-size: 14px;
+}
+.formView input
+{
+    font-size: 14px;
+    vertical-align:middle;
+    width: 100%;
+}
+
+.formView .btn
+{
+    width:auto;
+}
+
+.formView h3
+{
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+textarea
+{
+    overflow: auto;
+}
+
+.formView .textWrapper input, .formView .textWrapper textarea
+{
+    padding: 5px 0px;
+    border: 1px solid #ccc;
+    text-indent:3px;
+}
+.formView  input.date
+{
+    width:150px;
+}
+
+.formView  input.validateCode
+{
+    width:6em;
+}
+.formView textarea
+{
+    width: 60%;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.formView .buttonWrapper input,.formView .checkBoxWrapper input,.formView .radioWrapper input,.formView .buttonWrapper button
+{
+    width:auto;
+}
+.checkBoxWrapper input
+{
+    border:none;
+}
+.checkBoxWrapper label
+{
+    vertical-align:middle;
+    margin-right:5px;
+    margin-left:2px;
+}
+.buttonWrapper button
+{
+    
+}
+
+.formView .submit
+{
+   
+    padding: 3px 5px;
+}
+.formView span.error
+{
+    color: #999;
+    font-size: 12px;
+}
+.formView span.error img
+{
+    margin-right: 3px;
+}
+
+/*div布局*/
+.formView label span
+{
+    display: inline-block;
+    width: 6em;
+}
+
+.formView div.line
+{
+    margin-bottom: 10px;
+}
+
+
+
+/*修正百度编辑器下的样式*/
+.formView label .richText span
+{
+    display:inline;
+    
+}
+
+
+
+.btn
+{
+    padding: 5px;
+}
+
+.formView .tip
+{
+    line-height: 2;
+}
+
+/*验证码样式*/
+#refreshVCode
+{
+    cursor: pointer;
+    color: #0082CB;
+    border: none;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#refreshVCode
+{
+    color: Green;
+}
+
+#vimg
+{
+    vertical-align: middle;
+    margin-right: 3px;
+}
+/*验证码样式*/
+
+
+/*重新定义的表单样式*/
+.formView label span
+{
+    width:5em;
+}
+
+.formView  span.tip
+{
+    font-size:12px;
+    color:#999;
+    margin-left:5px;
+}
+
+/*表单用表格布局*/
+.formView table
+{
+    width:80%;
+}
+.formView table td.title
+{
+    width:6em;
+}

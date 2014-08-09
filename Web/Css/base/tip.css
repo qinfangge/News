@@ -1,0 +1,117 @@
+﻿*
+{
+	margin:0;
+	padding:0;
+}
+
+
+a
+{
+	text-decoration:none;
+	color:#333;
+}
+
+img
+{
+	border:none;
+	vertical-align:middle;
+	margin-left:5px;
+}
+
+
+
+body
+{
+	background:#E8EFF4;
+	
+}
+
+
+h1 {
+    font-family: "Microsoft Yahei";
+    font-weight: normal;
+    font-size:28px;
+    color:#333;
+    margin-top:10px;
+}
+
+.tips
+{
+	padding:10px 0;
+	border:1px solid #ccc;
+	padding-left:100px;
+	margin-top:10px;
+	border-radius:5px;
+	position:relative;
+	
+
+}
+
+.tipIcon
+{
+    position:absolute;
+    left:10px;
+    top:10px;
+}
+
+.tipWrapper
+{
+    background:#fff url(images/tip_bg.gif) repeat-x;
+    margin:0 auto;
+    margin-top:100px;
+    width:40%;
+    
+}
+#TipView
+{
+    _height:100px;
+    min-height:100px;
+}
+.btnBox a
+{
+	display:inline-block;
+	border:1px solid #ccc;
+	width:6em;
+	height:30px;
+	line-height:32px;
+	text-align:center;
+	margin-top:10px;
+	margin-right:6px;
+	border-radius:3px;
+	overflow:hidden;
+}
+
+.btnBox a:hover
+{
+	
+	border:1px solid #FFAC00;
+	
+}
+
+.btnBox
+{
+	text-align:center;
+	margin-top:10px;
+	
+	border-top:1px dashed #ccc;
+}
+
+.btnBox img
+{
+	margin-top:10px;
+}
+
+.tipsList
+{
+    list-style-type:none;
+    margin-top:8px;
+    line-height:20px;
+    margin-left:10px;
+    list-style-position:inside;
+    color:#333;
+}
+
+.tipsList li
+{
+    margin-bottom:10px;
+}

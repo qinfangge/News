@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="false" CodeBehind="Home.Master.cs" Inherits="CMS.Web.Home.Home" %>
+
+<%@ Register src="../Controls/Footer.ascx" tagname="Footer" tagprefix="uc1" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title></title>
+
+    <asp:Literal ID="SEOkeyWords" runat="server"></asp:Literal>
+    <asp:Literal ID="SEODescription" runat="server"></asp:Literal>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+     <meta name="viewport" content="width=1000,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/f2e/news/commend/images/appicon.png"/>
+    <link href="/css/head3lBKyc6KkiYn.css" rel="stylesheet"/>
+    <link href="/css/home.css" rel="stylesheet"/>
+
+    
+    <script type='text/javascript' src="Js/jquery-1.6.1.min.js"></script>
+    
+    <script type='text/javascript'>
+        $(function () {
+
+            var href = window.location.pathname + window.location.search;
+
+            if (href.indexOf("pid")) {
+
+                var re = new RegExp("\\/NewsList.aspx\\?category=(\\d+)&pid=(\\d+)", "gmi");
+
+                href = href.replace(re, "/NewsList.aspx?category=$2");
+            }
+            href = window.decodeURI(href);
+            $(".nav a[href=" + href + "]").parent().addClass("on").siblings().removeClass();
+            $("#example-one").organicTabs();
+
+            $("#searchButton").click(function () {
+                var keyWords = $.trim($("#keyWords").val());
+
+                if (keyWords == "") {
+
+                    alert("请输入搜索的关键词!");
+
+                } else {
+
+                    window.location.href = "Search.aspx?keyWords=" + keyWords;
+
+                }
+                return false;
+            });
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="PageHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="showside">
+    <form id="form1" runat="server">
+        <div>
+            <asp:Repeater ID="MainNav" runat="server">
+                    <ItemTemplate>
+                        <li <%#this.CurrentLink==Eval("link").ToString()?"class='active'":"" %>><a  channel="<%#Eval("id") %>" target='<%#(bool)Eval("target")?"_balnk":"_self" %>' href="<%#Eval("link") %>"><%#Eval("name") %> </a></li>
+                    </ItemTemplate>
+                </asp:Repeater>
+
+            <div id="topbar" class="topbar">
+    <h1 class=""><a title="网易荐新闻" target="_self" href="/">网易荐新闻</a></h1>
+
+    <div class="topbar-inner">
+        <div class="mainnav">
+            <ul id="mainlinks" class="mainlnks mainlnks-left" style="white-space: nowrap; padding-left: 91px; overflow: visible;">
+                <li class="active">
+                                         <a target="_self" href="/home/#loginfeed">推荐动态</a>
+                                     </li>
+                                <li>
+                    <a target="_self" href="/home/settings/#loginperson">个人信息</a>
+                </li>
+                                <li id="mainnav-line" style="display: none; width: 66px; left: 105px;" class="underline"></li>
+            </ul>
+            <a title="荐新闻首页" target="_self" href="/#loginreturn" class="backto">返回荐新闻</a>
+            <a title="返回列表页" href="/" id="ep-close" class="ep-close"></a>
+      <div class="ep-sidetools ep-lefttools">
+        <a href="javascript:" data-action="navleft" class="ep-nav ep-nav-pc ep-nav-left"><i></i><label>上一篇：</label><span id="ep-prev"></span></a>
+      </div>
+      <div class="ep-sidetools ep-righttools">
+        <div class="ep-sidetools-group">
+          <a title="推荐此新闻" class="ep-tool-jian js-upcount" data-action="ding">0</a>
+          <a data-hint="不感兴趣" title="不感兴趣" class="ep-tool-dislike" data-action="remove"></a>
+          <a title="跟贴" target="_self" class="ep-tool-comment js-tiecount" data-action="tieanchor">0</a>
+          <div class="ep-tool-share" data-action="share">
+            <div class="share-wrap">
+              <a title="分享到易信" class="share-yixin"></a>
+              <a title="分享到网易微博" class="share-163"></a>
+              <a title="分享到QQ空间" class="share-qzone"></a>
+              <a title="分享到新浪微博" class="share-sina"></a>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:" data-action="navright" class="ep-nav ep-nav-pc ep-nav-right"><i></i><label>下一篇：</label><span id="ep-next"></span></a>
+      </div>
+        </div>
+    </div>
+<iframe class="iframe_hidden" src="http://news.163.com/special/f2e/commend_proxy.html"></iframe></div>
+
+            <!--<div class="navibar">
+                <div class="header_top  clearfix">
+                    <div class="con_left">
+                        <span class="add"><a onclick="javascript:window.external.AddFavorite('http://www.baidu.com','鄂尔多斯产权交易中心')" class="fn">收藏我们</a></span>
+                    </div>
+                    <div class="col_right">
+                        <span class="login" id="userinfo">
+                            <span class="head_img">
+                                <img height="20" border="0" src="images/top_user.gif" style="vertical-align: top">
+                            </span>
+                            <span>
+                                <asp:HyperLink Visible="false" ID="LoginName" runat="server">HyperLink</asp:HyperLink>你好，欢迎来到鄂尔多斯公共资源交易平台&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <asp:Literal ID="NoLogin" Visible="false" runat="server">
+                                      
+                                     <a  href="Login.aspx"style="padding: 0 5px;">[登录]</a>或
+                                    <a href="Regist.aspx" onclick=";" style="padding: 0 5px;">[注册]</a>
+
+                                </asp:Literal>
+
+
+                            </span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>-->
+
+          
+
+            
+            <div id="content" style="width:auto;">
+                <div class="mainwrap commend-eploaded">
+                <asp:ContentPlaceHolder ID="Main" runat="server">
+                </asp:ContentPlaceHolder>
+                    </div>
+            </div>
+            <!--
+            <div class="footer">
+                <p>
+                    客服电话：<asp:Literal ID="Mobile" runat="server"></asp:Literal>(<asp:Literal ID="Contactor" runat="server"></asp:Literal>) 传真：<asp:Literal ID="Fax" runat="server"></asp:Literal>
+                    公司地址：<asp:Literal ID="Address" runat="server"></asp:Literal>QQ:<asp:Literal ID="QQ" runat="server"></asp:Literal>
+                    邮编：<asp:Literal ID="Zip" runat="server"></asp:Literal>
+                </p>
+                <p>&copy;2014鄂尔多斯联合产权交易所版权所有 沪ICP备10006454号-1 </p>
+                <div class="other">
+                    <asp:Literal ID="Other" runat="server"></asp:Literal>
+                </div>
+                <div style="text-align: center;">
+                    <a href="#">
+                        <img border="0" src="images/kxwz.png" style="margin-right: 5px;" /></a>
+                    <a href="#">
+                        <img border="0" src="images/sfrz.png" style="margin-right: 5px;" /></a>
+                    <a href="#">
+                        <img border="0" src="images/sm.png" style="margin-right: 5px;" /></a>
+
+                </div>
+
+            </div>
+-->
+            
+    
+            <uc1:Footer ID="Footer1" runat="server" />
+
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿
+/* 注册*/
+.c100 {
+ margin:0 auto 15px;
+ overflow:hidden;
+}
+.vipwrap{
+ width:1000px;
+ padding-bottom:10px;
+ border:1px solid #DDDFE3;
+ border-top:2px solid #DD4250;
+ margin-top:20px;
+}
+.mem_top {
+ background:#F6F6F6;
+ height:45px;
+}
+.mem_top h3 {
+ color:#DD4250;
+ float:left;
+ font-size:16px;
+ line-height:45px;
+ padding-left:25px;
+}
+.mem_top .reg_r {
+ float:right;
+ font-size:12px;
+ font-weight:normal;
+ margin-right:10px;
+ margin-top:15px;
+}
+.mem_top .reg_r a {
+ color:#DD4250;
+ margin:0 5px;
+}
+.reg_con{
+ background: url("../images/reg_bg.gif") no-repeat scroll 720px 30px;
+ height: 360px;
+}
+.regist_left{
+ float:left;
+ margin-top:20px;
+ padding-left:35px;
+ position:relative;
+ width:679px;	
+}
+.cc{
+ min-height: 50px;
+ clear:both;
+ margin-bottom:20px;
+}
+.regist_left dl dt {
+ float:left;
+ font-size:14px;
+ line-height:28px;
+ margin-right:10px;
+ text-align:right;
+ width:90px;
+}
+label, input, select {
+ vertical-align:middle;
+}
+
+.regist_left .ip {
+ margin-right: 5px;
+ width: 245px;
+}
+.regist_left dl dd {
+ float: left;
+}
+.regist_left dl dd.box input {
+/* background:#FFFFFF;*/
+ border:1px solid #AAAAAA;
+ border-radius:3px;
+ padding:1px 2px;
+ width:240px;
+ color:#888;
+ padding: 11px 13px;
+}
+.VCode {
+    padding: 11px 13px;
+}
+.txt-info-mouseout{
+ color: #999999;
+ font-family: Verdana,arial,sans-serif;
+ font-size: 12px;
+ line-height:166.6%;
+ text-align:left;
+}
+.regist_left .tp {
+ clear:none;
+ overflow:hidden;
+ width:320px;
+}
+.regist_left .tp div {
+ line-height: 16px;
+ max-width: 300px;
+ padding: 5px 0 5px 20px;
+}
+.av input {
+ 1width:140px;	
+ } 
+.av {
+ width:155px;
+ margin-right:5px;	
+}
+.tp a{
+ color:#333;
+ font-size:12px;
+ padding-left:12px;	
+}
+.ble{
+ color:#3366CC;
+ font-weight:700;
+ font-size:12px;	
+}
+.lause{
+ margin-right:5px;
+ font-size:12px;	
+}
+.regist_left dl dd input.confirm {
+ background:#DD4250;
+ border: 1px solid #AD1422;
+ border-radius: 3px;
+ color: #FFFFFF;
+ cursor: pointer;
+ font-size: 16px;
+ font-weight: 700;
+ height: 40px;
+ text-align: center;
+ width: 154px;
+}
+.search-hotwords {
+ background: url("../images/bbb.jpg") no-repeat scroll right center ;
+ cursor: pointer;
+ overflow: hidden;
+}
+#type {
+ background: #FFF9F9;
+ border:2px solid #EEEEEE;
+ position: absolute;
+ width: 241px;
+}
+#type ul {
+ font-size: 12px;
+}
+#type li {
+ float: left;
+ height: 35px;
+ line-height: 35px;
+ margin: 0;
+ padding: 0;
+  width: 241px;
+}
+
+#type span.ccc {
+ color: #666666;
+ font-size: 12px;
+ padding-left: 10px;
+}
+.ccc  a {
+ color: #0A45EE;
+ text-decoration: none;
+ cursor: pointer;
+}

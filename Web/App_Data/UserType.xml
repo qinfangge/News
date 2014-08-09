@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<roles>
+  <role>
+    <name>管理组</name>
+    <value>0,1,2</value>
+  </role>
+
+</roles>

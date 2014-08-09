@@ -1,0 +1,66 @@
+﻿#main
+{
+    overflow:hidden;
+    zoom:1;
+}
+
+/*左侧样式*/
+.leftBar
+{
+    width:220px;
+}
+
+.leftBar .mod
+{
+    margin-bottom:10px;
+}
+
+
+/*右侧样式*/
+.rightView
+{
+    margin-left:230px;
+    
+}
+
+.rightView .list li
+{
+    height:30px;
+    line-height:30px;
+}
+
+.rightView .pubtime
+{
+    float:right;
+}
+
+.crumbNav
+{
+    height:30px;
+    line-height:30px;
+}
+
+.rightView .crumbNav
+{
+    float:right;
+    margin-right:10px;
+    font-size:12px;
+    font-weight:normal;
+    
+}
+
+.rightContent
+{
+    padding:10px;
+    zoom:1;
+    min-height:300px;
+    _height:300px;
+}
+
+li.emptyData
+{
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    width: 100% !important;
+}

@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CMS.Web.Admin.MasterPage" %>
+
+<%@ Register src="../Controls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>模板页</title>
+    <link href="../images/skin.css" rel="stylesheet" type="text/css" />
+    <link href="/css/base/reset.css" type="text/css" rel="stylesheet" />
+    <link href="/css/base/footer.css" type="text/css" rel="stylesheet" />
+    <link href="../Css/admin.css" type="text/css" rel="stylesheet" />
+    <link href="../Css/leftMenu.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/Js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="../js/leftMenu.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div id="header">
+                <table width="100%" height="64" border="0" cellpadding="0" cellspacing="0" class="admin_topbg">
+                    <tr>
+                        <td width="61%" height="64">
+                            <img src="../images/logo.gif" width="262" height="64"></td>
+                        <td width="39%" valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="74%" height="38" class="admin_txt">
+                                        <asp:Literal ID="RoleName" runat="server"></asp:Literal>：<b><asp:Literal ID="UserName" runat="server"></asp:Literal></b> 您好,感谢登陆使用！ |　<a style="color:#fff" href="/">返回网站首页</a></td>
+                                    <td width="22%"><a href="../LogOut.aspx" onclick="logout();">
+                                        <img src="../images/out.gif" alt="安全退出" width="46" height="20" border="0"/></a></td>
+                                    <td width="4%">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td height="19" colspan="3">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="main">
+                <div id="leftMenu" class="fl">
+                    <asp:Panel ID="LeftMenuPanel" runat="server">
+                        <uc1:LeftMenu ID="LeftMenu1" runat="server" />
+                       
+                    </asp:Panel>
+
+                </div>
+
+                <div id="mainContent">
+
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="13" height="29" valign="top" background="../images/mail_leftbg.gif">
+                                <img src="../images/left-top-right.gif" width="17" height="29" /></td>
+                            <td width="935" height="29" valign="top" background="../images/content-bg.gif">
+                                <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+                                    <tr>
+                                        <td height="31">
+                                            <div class="titlebt">
+                                                <asp:ContentPlaceHolder ID="MinNav" runat="server"></asp:ContentPlaceHolder>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="16" valign="top" background="../images/mail_rightbg.gif">
+                                <img src="../images/nav-right-bg.gif" width="16" height="29" /></td>
+                        </tr>
+                        <tr>
+                            <td height="71" valign="middle" background="../images/mail_leftbg.gif">&nbsp;</td>
+                            <td valign="top" bgcolor="#F7F8F9" style="padding-top:10px;">
+
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                            <td background="../images/mail_rightbg.gif">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" background="../images/mail_leftbg.gif">
+                                <img src="../images/buttom_left2.gif" width="17" height="17" /></td>
+                            <td height="17" valign="top" background="../images/buttom_bgs.gif">
+                                <img src="../images/buttom_bgs.gif" width="17" height="17" /></td>
+                            <td background="../images/mail_rightbg.gif">
+                                <img src="../images/buttom_right2.gif" width="16" height="17" /></td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+            </div>
+            <div id="footer">
+                <p>技术支持：众拍网（www.zhongpaiwang.com) &nbsp; 客服QQ:417471191(技术部)</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

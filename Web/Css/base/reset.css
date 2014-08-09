@@ -1,0 +1,423 @@
+﻿/*
+KISSY CSS Reset
+理念：清除和重置是紧密不可分的
+特色：1.适应中文 2.基于最新主流浏览器
+维护：玉伯(lifesinger@gmail.com), 正淳(ragecarrier@gmail.com)
+*/
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td,a{ /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    1font: 12px/1.2 Tahoma, Helvetica, Arial, "5b8b4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+font:12px/1.8 'microsoft yahei',tahoma,verdana,'simsun'
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; color:#000; }
+a:hover { text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+ border-bottom: 1px dotted;
+ cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+ table-layout:fixed;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+
+
+/* 以下是我根据工作需要自己添加的-王业坤 */
+
+.container
+{
+	width:960px;
+	1border:1px solid;
+	margin:0 20px;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+}
+
+.blank5
+{
+	
+	height:5px;
+	clear:both;
+}
+.blank10
+{
+	
+	height:10px;
+	clear:both;
+
+}
+.blank20
+{
+	
+	height:20px;
+	clear:both;
+}
+
+.clearboth
+{
+	clear:both;
+}
+.fl
+{
+	float:left;
+	
+}
+
+.fr
+{
+	float:right;
+	
+}
+
+/* li 样式*/
+
+.dot li
+{
+	background:url("images/dot_bg.gif") 5px center no-repeat;
+	padding-left:14px;
+	height:24px;
+	line-height:24px;
+}
+
+.dot li span
+{
+	float:right;
+}
+
+
+
+
+
+/* li 样式*/
+
+
+
+/*对齐方式,一般用于td,th*/
+
+th
+{
+	font-size:14px;
+	font-weight:bold;
+}
+th,td
+{
+	padding:5px 0;
+	line-height:1.5;
+}
+.alignLeft
+{
+	
+	text-align:left;
+	
+}
+
+.bottomLine td
+{
+	border-bottom:1px dashed #4A8BF5;
+}
+.alignCenter
+{
+	
+	text-align:center;
+}
+
+.alignRight
+{
+	
+	text-align:right;
+}
+
+.red
+{
+	color:red;
+}
+
+
+
+/*对齐方式,一般用于td,th*/
+
+
+
+/*用于布局*/
+.layout_l
+{
+	float:left;
+}
+.box_1_1
+{
+	width:100%;
+	overflow:hidden;
+	float:left;
+}
+
+.box_1_2
+{
+	width:50%;
+	overflow:hidden;
+	float:left;
+}
+
+.box_1_3
+{
+	width:33.33%;
+	_width:33%;/*for ie6*/
+	overflow:hidden;
+	float:left;
+	zoom:1;
+
+
+}
+
+.bg_red
+{
+	background:red;
+}
+.bg_blue
+{
+	background:blue;
+}
+
+.bg_green
+{
+	background:green;
+
+}
+
+.bg_orange
+{
+	background:orange;
+}
+
+/*用于布局*/
+
+/*清除浮动元素从blueprint 摘抄下来的*/
+.clearfix
+{
+	overflow:hidden;
+	zoom:1;
+}
+/*清除浮动元素从blueprint 摘抄下来的*/
+
+
+/*常见模块样式*/
+/*通用*/
+.hd
+{
+	border:1px solid #ccc;
+}
+.hd ul
+{
+	float:right;
+}
+
+.hd ul li
+{
+	float:left;
+}
+
+.hd ul li a
+{
+	padding:0 5px;
+}
+
+
+.hd span
+{
+	float:right;
+	padding-right:5px;
+}
+
+.hd a.more
+{
+	float:right;
+	font-size:12px;
+	margin-right:5px;
+}
+
+.bd
+{
+	
+	border:1px solid #ccc;
+	border-top:none;
+	padding:5px;
+	
+}
+
+/*通用*/
+
+.modStyleOne .hd
+{
+	
+	padding-left:8px;
+	color:#333;
+	
+	1height:30px;
+	1_margin-left:-3px;/*当有高度设置时，解决3像素偏移*/
+	line-height:30px;
+	
+	/*添加背景*/1background:url("http://mat1.gtimg.com/house/fang_img_nick/tit_5.png") no-repeat scroll 0 0 transparent
+	
+}
+
+.newList_one ul {
+    border-top: 1px dashed #DBDBDB;
+    padding: 10px 0 8px;
+}
+
+/*常见模块样式*/
+
+/*常用颜色*/
+.color_gray
+{
+	color:#666;
+}
+
+.color_999
+{
+	color:#999;
+}
+
+.color_black
+{
+	color:#333;
+}
+.color_2b
+{
+	color:#2b2b2b;
+}
+
+.color_red
+{
+	color:#c10000;
+}
+/*常用颜色*/
+
+
+
+/*推荐样式*/
+
+h4.tj
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+	padding:5px 0;
+	text-indent:10px;
+}
+
+.hilight/*文字高亮*/
+{
+	color:#CC0000;
+}
+/*推荐样式*/
+/*分页样式*/
+.page-view
+{
+	text-align:right;
+	padding-right:5px;
+	line-height:24px;
+	margin-top:5px;
+}
+
+.page-view a, .page-view span {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #333333;
+    margin-right: 1px;
+    line-height:20px;
+    padding:3px 8px 2px;
+    text-decoration: none;
+}
+.page-view a:hover
+{
+	border:1px solid #cc0000;
+}
+
+.page-view span.current {
+    border: 1px solid #FFFFFF;
+    color: #FD6D01;
+    font-weight: 700;
+}
+
+/*分页样式*/
+
+
+/*排行榜样式*/
+
+.rank span {
+    background: url("images/rankLast_bg.gif") no-repeat scroll 0 0 transparent;
+    color: white;
+    display: inline;
+    float: left;
+    height: 18px;
+    margin-left: 10px;
+    text-indent: 5px;
+    width: 20px;
+}
+
+
+.rank span.front {
+    background: url("images/rankFront_bg.gif") no-repeat scroll 0 0 transparent;
+}
+
+.none {
+    display:none;
+}
+
+
+/*排行榜样式*/
+/* 以上是我根据工作需要自己添加的-王业坤 */
+
+
+
+

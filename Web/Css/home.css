@@ -1,0 +1,10 @@
+﻿.emptyData {
+text-align:center;
+}
+    .emptyData img {
+        width:200px;
+    }
+    .emptyData h1 {
+        font-size:18px;
+        margin-bottom:10px;
+    }

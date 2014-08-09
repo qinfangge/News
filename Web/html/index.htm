@@ -1,0 +1,950 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>封丘荐新闻</title>
+    <meta name="keywords" content="荐新闻,推荐,荐,新闻,自动推荐,封丘推荐,个性化">
+    <meta name="description" content="荐新闻是封丘旗下个性化新闻推荐网站，它能根据人工智能算法快速的分析你的兴趣爱好，根据你的兴趣爱好自动推荐新闻，使用的越多推荐的内容就越准确。懂你心的荐新闻给你全新的新闻阅读体验。封丘荐新闻。">
+    <meta name="author" content="封丘">
+    <meta name="Copyright" content="封丘版权所有">
+
+
+    <meta name="viewport" content="width=1000,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/f2e/news/commend/images/appicon.png">
+    <link href="css/head3lBKyc6KkiYn.css" rel="stylesheet">
+</head>
+<body class="showside">
+
+    <div class="topbar" id="topbar">
+        <h1 class="h1"><a href="http://j.news.163.com/" target="_self">封丘荐新闻</a></h1>
+        <div class="topbar-inner">
+            <ul style="white-space: nowrap; padding-left: 193px; overflow: visible;" class="mainlnks" id="mainlinks">
+                <li class="active"><a channel="99">推荐</a></li>
+                <li><a channel="1">聚焦</a></li>
+                <li><a channel="2">娱乐</a></li>
+                <li><a channel="3">体育</a></li>
+                <li><a channel="5">科技</a></li>
+                <li><a channel="8">搞笑</a></li>
+                <li><a channel="14">交友</a></li>
+                <li><a channel="4">财经</a></li>
+                <li><a channel="6">汽车</a></li>
+                <li><a channel="7">时尚</a></li>
+                <li><a channel="66">图集</a></li>
+
+
+                <li style="visibility: visible;" class="mainlnks-more"><span>更多<i></i></span>
+                    <ul>
+                        <li><a channel="9">美女</a></li>
+                        <li><a channel="11">LOFTER精选</a></li>
+                        <li><a channel="10">本地</a></li>
+                    </ul>
+                </li>
+                <li class="underline" style="display: none; width: 38px; left: 207px;" id="mainnav-line"></li>
+            </ul>
+            <div class="mainnav article-nav">
+                <div style="display: block;" class="banner-hint show-hint" id="banner-hint">有未读推荐，点击查看</div>
+                <a style="visibility: visible;" class="ep-close" id="ep-close" href="#brief/99/list" title="返回列表页"></a>
+                <div class="ep-sidetools ep-lefttools">
+                    <a class="ep-nav ep-nav-pc ep-nav-left" data-action="navleft" href="javascript:"><i></i>
+                        <label>上一篇：</label><span id="ep-prev">63岁郭台铭又当爸</span></a>
+                </div>
+                <div class="ep-sidetools ep-righttools">
+                    <div class="ep-sidetools-group">
+                        <a data-action="ding" class="ep-tool-jian js-upcount" title="推荐此新闻">26</a>
+                        <a data-action="remove" class="ep-tool-dislike" title="不感兴趣" data-hint="不感兴趣"></a>
+                        <a data-action="tieanchor" class="ep-tool-comment js-tiecount" target="_self" title="跟贴">954</a>
+                        <div data-action="share" class="ep-tool-share">
+                            <div class="share-wrap">
+                                <a class="share-yixin" title="分享到易信"></a>
+                                <a class="share-163" title="分享到封丘微博"></a>
+                                <a class="share-qzone" title="分享到QQ空间"></a>
+                                <a class="share-sina" title="分享到新浪微博"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="ep-nav ep-nav-pc ep-nav-right" data-action="navright" href="javascript:"><i></i>
+                        <label>下一篇：</label><span id="ep-next">湖北旱情持续加重</span></a>
+                </div>
+            </div>
+            <a href="http://love.163.com/?vendor=163.news.jianad" class="ep-love-banner"></a>
+        </div>
+        <iframe src="index_files/commend_proxy.htm" class="iframe_hidden"></iframe>
+    </div>
+
+
+
+    <div class="mainwrap commend-eploaded">
+        <div style="top: auto;" class="rightbar">
+            <div class="rightbar-caption">
+                <div class="weather" id="weather">
+                    <div class="clearfix">
+                        <a href="#" class="city">上海</a>
+                        <div class="weather-bg weather-1">
+                            <span class="weather-name">多云</span>
+
+                            <div class="weather-staus">
+                                <span title="26~34度" class="weather-deg">26~34<label>°</label></span>
+                            </div>
+                        </div>
+                        <div class="mode-switch mode-switch2" id="mode-switch">
+                            <a href="#list" target="_self" class="mode-list" title="列表式浏览"></a>
+                            <a href="#card" target="_self" class="mode-card" title="卡片式浏览"></a>
+                        </div>
+                    </div>
+                    <div class="weather-citylist-wrap weather-citylist-wrap2" style="display: none;">
+                        <div class="weather-cityaz"><a href="javascript:" class="weather-az-active">热门</a><a href="javascript:">A</a><a href="javascript:">B</a><a href="javascript:">C</a><a href="javascript:">D</a><a href="javascript:">E</a><a href="javascript:">F</a><a href="javascript:">G</a><a href="javascript:">H</a><a href="javascript:">J</a><a href="javascript:">K</a><a href="javascript:">L</a><a href="javascript:">M</a><a href="javascript:">N</a><a href="javascript:">P</a><a href="javascript:">Q</a><a href="javascript:">R</a><a href="javascript:">S</a><a href="javascript:">T</a><a href="javascript:">W</a><a href="javascript:">X</a><a href="javascript:">Y</a><a href="javascript:">Z</a></div>
+                        <div class="weather-citylist"><a href="javascript:" code="101010100">北京</a><a href="javascript:" code="101020100">上海</a><a href="javascript:" code="101290101">昆明</a><a href="javascript:" code="101210101">杭州</a><a href="javascript:" code="101280101">广州</a><a href="javascript:" code="101270101">成都</a><a href="javascript:" code="101110101">西安</a><a href="javascript:" code="101190101">南京</a><a href="javascript:" code="101280601">深圳</a><a href="javascript:" code="101040100">重庆</a><a href="javascript:" code="101250101">长沙</a><a href="javascript:" code="101070101">沈阳</a><a href="javascript:" code="101230201">厦门</a><a href="javascript:" code="101200101">武汉</a><a href="javascript:" code="101310101">海口</a><a href="javascript:" code="101130101">乌鲁木齐</a><a href="javascript:" code="101120201">青岛</a><a href="javascript:" code="101070201">大连</a><a href="javascript:" code="101050101">哈尔滨</a><a href="javascript:" code="101310201">三亚</a><a href="javascript:" code="101060101">长春</a><a href="javascript:" code="101300101">南宁</a><a href="javascript:" code="101260101">贵阳</a><a href="javascript:" code="101230101">福州</a><a href="javascript:" code="101180101">郑州</a><a href="javascript:" code="101120101">济南</a><a href="javascript:" code="101300501">桂林</a><a href="javascript:" code="101030100">天津</a><a href="javascript:" code="101100101">太原</a><a href="javascript:" code="101240101">南昌</a><a href="javascript:" code="101140101">拉萨</a><a href="javascript:" code="101150101">西宁</a><a href="javascript:" code="101340101">台北</a></div>
+                    </div>
+                </div>
+                <div class="user-info" id="user-rightbar-login">
+                    <form autocomplete="off">
+                        <div class="ntes-loginframe-tips"></div>
+                        <div class="form-group">
+                            <input value="zhongpaiwang@126.com" name="username" placeholder="封丘通行证/邮箱登陆" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input name="password" placeholder="密码" type="password">
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <input name="autologin" class="ntes-loginframe-checkbox" type="checkbox">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" name="login" class="btn-submit">登录</button>
+
+                            <div class="badge-group">
+                                <a href="http://reg.163.com/reg/reg.jsp" class="regist">注册</a>
+                                <a href="http://reg.163.com/RecoverPassword.shtml?f=www">找回密码</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="third">第三方登录</span>
+                            <a href="javascript:openWin('/oauth/login?type=SINA')" target="_self" class="weibo" title="新浪微博登录"></a>
+                            <!--<a href="javascript:openWin('/oauth/login?type=SINA')" target="_self" class="qzone"></a>-->
+                            <a href="javascript:openWin('/oauth/login?type=YIXIN')" target="_self" class="yixin" title="易信登录"></a>
+                        </div>
+                    </form>
+                    <div class="user-main" style="display: none;">
+                        <a href="" class="avatar"></a>
+                        <div class="user-name">
+                            <a href="">--</a>
+                        </div>
+                        <div class="badge-group">
+                            <a href="" class="reason">
+                                <span id="recNum">0</span>
+                                推荐&nbsp;
+                    <span id="shareNum">0</span>
+                                分享
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ranking-list">
+                <ul class="nav-list">
+                    <li>
+                        <a class="item">今日热点新闻</a>
+                    </li>
+                </ul>
+                <div>
+                    <div class="item-wrapper active">
+                        <ul id="ranking-wrapper">
+                            <li class="item-top3">
+                                <span class="num num-red">1</span>
+                                <div class="name">
+                                    <a docid="A30RVQ4L00014SEH" href="http://j.news.163.com/docs/99/2014080701/A30RVQ4L00014SEH.html" srctype="106">房价下跌银行“被房东” 苏杭惊现“弃房断供”</a>
+                                </div>
+                            </li>
+                            <li class="item-top3">
+                                <span class="num num-red">2</span>
+                                <div class="name">
+                                    <a docid="A2VORD6N9001RD6O" href="http://j.news.163.com/docs/10/2014080614/A2VORD6N9001RD6O.html" srctype="106">北影校花景甜后台到底有多硬？一起来扒女明星背景</a>
+                                </div>
+                            </li>
+                            <li class="item-top3">
+                                <span class="num num-red">3</span>
+                                <div class="name">
+                                    <a docid="A300RQQ39001RQQ4" href="http://j.news.163.com/docs/10/2014080617/A300RQQ39001RQQ4.html" srctype="106">致命！饿的时候千万别吃10种食品</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">4</span>
+                                <div class="name">
+                                    <a docid="A31D4J9500014AED" href="http://j.news.163.com/docs/1/2014080706/A31D4J9500014AED.html" srctype="106">东莞女模特半夜回家小巷内被施暴 警方调查(图)</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">5</span>
+                                <div class="name">
+                                    <a docid="A30R5VOQ90015VOR" href="http://j.news.163.com/docs/99/2014080702/A30R5VOQ90015VOR.html" srctype="106">61岁钟镇涛再当新郎 婚前验精证实力在</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">6</span>
+                                <div class="name">
+                                    <a docid="A2VBGPE100031H2L" href="http://j.news.163.com/docs/2/2014080611/A2VBGPE100031H2L.html" srctype="106">疑似比伯女友赛琳娜裸照流出 露胸半裸</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">7</span>
+                                <div class="name">
+                                    <a docid="A2VVNAC59001NAC6" href="http://j.news.163.com/docs/2/2014080617/A2VVNAC59001NAC6.html" srctype="106">王珞丹晒自拍裙子拉链没拉  网友犀利调侃不忍直视</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">8</span>
+                                <div class="name">
+                                    <a docid="A31EKNOO9001KNOP" href="http://j.news.163.com/docs/10/2014080707/A31EKNOO9001KNOP.html" srctype="106">网曝郑州小三被扒光衣服</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">9</span>
+                                <div class="name">
+                                    <a docid="A30G85IM00031H2L" href="http://j.news.163.com/docs/2/2014080622/A30G85IM00031H2L.html" srctype="106">《色戒》王佳芝原型照片曝光 汤唯果真神还原</a>
+                                </div>
+                            </li>
+                            <li class="">
+                                <span class="num ">10</span>
+                                <div class="name">
+                                    <a docid="A30QFHME00032KMI" href="http://j.news.163.com/docs/99/2014080701/A30QFHME00032KMI.html" srctype="106">林建名女儿爆父拥二百名性伴 不知父吃壮阳药</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="ne-login-bg"></div>
+            <div class="recent-hd">
+                大家刚刚推荐
+            </div>
+            <div class="recent-item-list">
+                <div style="top: -186px;" class="recent-item-list-wrapper">
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A300RTAB9001RTAC" data-url="/docs/8/2014080617/A300RTAB9001RTAC.html" docid="A300RTAB9001RTAC" srctype="107" class="recent-title">从小训练孩子攀岩</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/zouxm1984/">天戟沧雄</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A2VS980K9001980L" data-url="/docs/99/2014080616/A2VS980K9001980L.html" docid="A2VS980K9001980L" srctype="107" class="recent-title">iPhone 6真机组图现身Twitter：这次真不是机模</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/chinnoaaron/">chinnoaaron</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A31MLBMP9001LBMQ" data-url="/docs/8/2014080700/A31MLBMP9001LBMQ.html" docid="A31MLBMP9001LBMQ" srctype="107" class="recent-title">我去，从罚球线起跳啊！</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/t_macs@126.com/">流浪的球鞋</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A31I2I2R90012I2S" data-url="/docs/8/2014080708/A31I2I2R90012I2S.html" docid="A31I2I2R90012I2S" srctype="107" class="recent-title">照着这发型剪</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/rfwlli/">rfwlli</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A31EKNOO9001KNOP" data-url="/docs/10/2014080707/A31EKNOO9001KNOP.html" docid="A31EKNOO9001KNOP" srctype="107" class="recent-title">网曝郑州小三被扒光衣服</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/zjflbx/">乃们的丰兄</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A30MVQ7Q0011179O" data-url="http://mobile.163.com/14/0807/00/A30MVQ7Q0011179O.html" docid="A30MVQ7Q0011179O" srctype="107" class="recent-title">Note 4亮点全解析：三面屏幕配竹制后盖</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/me0mj/">就是我me0mj</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A31Q36M0900136M1" data-url="/docs/6/2014080710/A31Q36M0900136M1.html" docid="A31Q36M0900136M1" srctype="107" class="recent-title">奔驰全新防弹车型S Guard 可抗机枪子弹!</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/linyanri/">216587773</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A324CDNJ9001CDNK" data-url="/docs/2/2014080712/A324CDNJ9001CDNK.html" docid="A324CDNJ9001CDNK" srctype="107" class="recent-title">《爸爸去哪儿》杨阳洋是不合群？还是更有独立性？</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/yrx333/">Kiki16110193</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A31KBVU49001BVU5" data-url="/docs/1/2014080708/A31KBVU49001BVU5.html" docid="A31KBVU49001BVU5" srctype="107" class="recent-title">男孩烈日下摆茶摊为救灾人员送水解渴</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/lfj888@126.com/">lfj888126</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="recent-item">
+                        <i></i>
+                        <div class="recent-detail">
+                            <a href="http://j.news.163.com/#detail/99/A30A0N9E90010N9F" data-url="/docs/99/2014080619/A30A0N9E90010N9F.html" docid="A30A0N9E90010N9F" srctype="107" class="recent-title">十分罕见：17张有些诡异的老照片</a>
+                            <label>[<a class="nickname" href="http://j.news.163.com/profile/yangm516/">yangm516</a>]推荐</label>
+                        </div>
+                    </div>
+
+                    <!--
+            <div class="recent-item ">
+		        <i></i>
+		        <div class="recent-detail">
+		            <a href="http://news.163.com/14/0318/11/9NK78O4300011229.html" docid="6597268778261368654">起底东莞"丐帮"：帮主为利润砸断幼童腿喂安眠药</a>
+		            <label>[绡罗]推荐</label>
+		        </div>
+		    </div>
+			-->
+                </div>
+            </div>
+        </div>
+       
+        <div style="top: 105px;" class="commend-listwrap">
+            <div style="min-height: 2110px;" class="mainarea clearfix">
+                <div style="padding-top: 62px;" class="waterfall clearfix waterfall1" id="news-list">
+                    <div style="display: inline-block;" class="card card-pic card-visible hover">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/2/2014080709/A31NPSIG9001PSIH.html">
+
+                                <i style="height: 200px"></i>
+
+                                <img src="images/easyread_008.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/2/2014080709/A31NPSIG9001PSIH.html">
+                                    <div class="title-mask"></div>
+                                    <span>文章恋小三姚笛 谢娜：不让张杰跟文章玩儿了</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>昨日凌晨，文章发声明承认劈腿姚笛，并称一切都是自己咎由自取。然而，有网友误把女主角姚笛当成了《武林外传》中的女演员姚晨，从而跑到姚晨的微博上留言进行攻击。</p>
+                        </div>
+                        <div class="intera" docid="A31NPSIG9001PSIH">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">1</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31NPSIG9001PSIH.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">1</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-spic card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/1/2014080705/A31936UQ00011229.html">
+
+                                <img src="images/img1.jpg" onerror="imgerr(this)" height="132">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/1/2014080705/A31936UQ00011229.html">
+
+                                    <span>男子开价值30余万汽车偷西瓜</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>天热寻找刺激，8月4日晚，合川区五男子开着30几万的轿车，前往距离合川区30多公里镇上偷西瓜，不仅西瓜没偷成，反而赔了1200元，还要被行政拘留。忽然，杨晶看见不远处的瓜地里有几个人影闪动。“你们干啥子？给我站到。”杨晶昨天对重庆晚报记者说。</p>
+                        </div>
+                        <div class="intera" docid="A31936UQ00011229">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/news_shehui7_bbs/A31936UQ00011229.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">26</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic longpic"><a href="http://j.news.163.com/docs/66/2014080610/A2VJ462L9001462M.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset3-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2Fm5eMJp5-z1sMbY5wQWqibQ%3D%3D%2F7806653503489356163.jpg.155x10000.auto.jpg)"></span><span class="photoset-tile photoset3-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F6KuMOcCZc48-SCSLEsNTcg%3D%3D%2F7916942216336054465.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset3-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F0jhSiNaHg45_Vb005g0Dnw%3D%3D%2F7916540894591920195.jpg.10000x210.auto.jpg)"></span>
+                                <img src="images/easyread_018.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080610/A2VJ462L9001462M.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>云南鲁甸地震影像志：第二日</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>8月3日16时30分，云南省昭通市鲁甸县发生6.5级地震，震源深度12千米，地震已致鲁甸县数百人死亡，数千人受伤。封丘新闻将以影像的方式呈现灾情，直到救援结束。</p>
+                        </div>
+                        <div class="intera" docid="A2VJ462L9001462M">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A2VJ462L9001462M.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic longpic"><a href="http://j.news.163.com/docs/66/2014080614/A2VMI6GA9001I6GB.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset4-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2Fm0UlwKMjhjf05r_JYVicKw%3D%3D%2F7916850956870954208.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset4-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FeBGlYLntOiclPD-Lt9DUOA%3D%3D%2F7916881743196532218.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset4-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F3cnrgdsSM-ss7wzCeINQVQ%3D%3D%2F7916891638801182146.jpg.10000x104.auto.jpg)"></span><span class="photoset-tile photoset4-3" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F02JecvucCQHwQx3TXtPJ5w%3D%3D%2F7916576078964010063.jpg.10000x104.auto.jpg)"></span>
+                                <img src="images/easyread_014.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080614/A2VMI6GA9001I6GB.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>美一男子环游世界与最危险动物自拍留影</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract noabstract">
+                            <p>&nbsp;</p>
+                        </div>
+                        <div class="intera" docid="A2VMI6GA9001I6GB">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A2VMI6GA9001I6GB.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-spic card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/10/2014080709/A31MLB8T9001LB8U.html">
+
+                                <img src="images/easyread_007.jpg" onerror="imgerr(this)" height="132">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/10/2014080709/A31MLB8T9001LB8U.html">
+
+                                    <span>黑老大刘汉刘维上诉案今宣判 一审均被判死刑</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>湖北省高级人民法院今日将分别在咸宁市中级人民法院和咸宁市咸安区人民法院公开宣判刘汉、刘维等被告人和被告单位四川汉龙有限公司上诉案。</p>
+                        </div>
+                        <div class="intera" docid="A31MLB8T9001LB8U">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31MLB8T9001LB8U.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-spic card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic longpic"><a href="http://j.news.163.com/docs/99/2014080608/A2V6HP9N9001HP9O.html">
+
+                                <img src="images/easyread_017.jpg" onerror="imgerr(this)" width="132">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/99/2014080608/A2V6HP9N9001HP9O.html">
+
+                                    <span>毛泽东唯一一次被捕：被押去处死的路上机智逃脱</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>编者按:《党史文汇》发表文章《盘点毛泽东生命里不寻常的“9月9日”》。文中记述1927年9月9日，毛泽东发动秋收起义。也正是这天，毛泽东遭遇了人生中唯一一次被捕，最终机智逃脱，摘编如下。这天，是毛泽东开始走上军事家征程的日子。</p>
+                        </div>
+                        <div class="intera" docid="A2V6HP9N9001HP9O">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">26</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A2V6HP9N9001HP9O.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">499</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/66/2014080607/A2UUHAOL9001HAOM.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset3-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F_fqvyumbfBp-06makHwkLQ%3D%3D%2F7916621158940747858.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset3-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FObc1ImuAhiSF1w4nqhjqbw%3D%3D%2F7916871847591880074.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset3-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F1WWM0OByreoRuSOSyNBAnA%3D%3D%2F7916947713894196008.jpg.10000x210.auto.jpg)"></span>
+                                <img src="images/easyread_021.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080607/A2UUHAOL9001HAOM.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>湖北旱情持续加重</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract noabstract">
+                            <p>&nbsp;</p>
+                        </div>
+                        <div class="intera" docid="A2UUHAOL9001HAOM">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A2UUHAOL9001HAOM.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic longpic"><a href="http://j.news.163.com/docs/66/2014080611/A30TF6SC9001F6SD.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset4-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FZyVSBRUiTZ2ThTmSmpnPsg%3D%3D%2F7916524401917507216.jpg.145x10000.auto.jpg)"></span><span class="photoset-tile photoset4-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FS_uLfiX0asm1ez68o41SPw%3D%3D%2F7916815772498867560.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset4-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FGfBYFFGoBxNKVDSW9TMGEA%3D%3D%2F7916966405591871582.jpg.10000x104.auto.jpg)"></span><span class="photoset-tile photoset4-3" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FlXQN4wpFNmHH7URShQiCJQ%3D%3D%2F7916642049661677458.jpg.10000x104.auto.jpg)"></span>
+                                <img src="images/easyread_011.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080611/A30TF6SC9001F6SD.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>新加坡七大富亨发家记</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>新加坡七大富亨发家记</p>
+                        </div>
+                        <div class="intera" docid="A30TF6SC9001F6SD">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A30TF6SC9001F6SD.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-pic card-visible">
+                        <i class="card-flag card-flag-6"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/99/2014080710/A31VPU149001PU15.html">
+
+                                <i style="height: 285px"></i>
+
+                                <img src="images/easyread_010.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/99/2014080710/A31VPU149001PU15.html">
+                                    <div class="title-mask"></div>
+                                    <span>小牛过马路跨不过护栏被卡 幸得路人解救</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>玻利维亚小牛跨护栏不幸被卡。据英国《每日邮报》8月5日报道，在玻利维亚绸齐思的公路上，一头小白牛似乎脱离了牛群，并在试图跨越公路防护栏时被卡住了。幸运的是，路过的男子杰克·魏格纳正好开车经过。</p>
+                        </div>
+                        <div class="intera" docid="A31VPU149001PU15">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31VPU149001PU15.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-pic card-visible">
+                        <i class="card-flag card-flag-6"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/5/2014080710/A31TGV029001GV03.html">
+
+                                <i style="height: 277px"></i>
+
+                                <img src="images/easyread_009.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/5/2014080710/A31TGV029001GV03.html">
+                                    <div class="title-mask"></div>
+                                    <span>iPhone 6功能全面曝光 改进指纹识别</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>6会在9月9日发布的消息，并得到了彭博社和《华尔街日报》等美国主流媒体的确认。</p>
+                        </div>
+                        <div class="intera" docid="A31TGV029001GV03">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31TGV029001GV03.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-nopic card-left card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle ">
+
+                            <h2>
+                                <a href="http://j.news.163.com/docs/99/2014080617/A2VVV34E00014SEH.html">
+
+                                    <span>英国女子自拍瘦身过程 警示过度减肥有害</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>17岁的霍利·坦普尔定期自拍自己消瘦的样子，经过和厌食症的抗争她现在很健康。中国日报网8月6日电据英国《每日邮报》8月5日报道，英国一个17岁的女孩曾用“瘦身自拍”的方式记录自己戏剧性的减肥过程，她告诫人们这样做是有危害的。</p>
+                        </div>
+                        <div class="intera" docid="A2VVV34E00014SEH">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">3</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/news3_bbs/A2VVV34E00014SEH.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">7</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-right card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic longpic"><a href="http://j.news.163.com/docs/66/2014080622/A30FNP9D9001NP9E.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset4-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F4MCaSvZYYCauygskdbLkRw%3D%3D%2F7916767393987244590.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset4-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F7DgyiJkduxwh9GA4vFJOrA%3D%3D%2F7916692627196556113.jpg.145x10000.auto.jpg)"></span><span class="photoset-tile photoset4-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FX7ayXPjIuATC6D6RjuzXCg%3D%3D%2F7916916927568622765.jpg.10000x104.auto.jpg)"></span><span class="photoset-tile photoset4-3" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FD0q0wM-ZTtVQOMghr7OOHw%3D%3D%2F7916604666266333885.jpg.10000x104.auto.jpg)"></span>
+                                <img src="images/easyread_019.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080622/A30FNP9D9001NP9E.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>英女子用彩色橡皮筋编织个性比基尼 引网友围观</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>
+                                据《每日邮报》8月6日报道，来自英国南威尔士的25岁女子琳温?斯托尼莱克(Lynwen 
+Stonelake)花了数月的时间，用彩色橡皮筋编织成了一套两件式比基尼，而这件事的起因只是为了给2岁的女儿莱克西(Lexi)遍一条手链。据悉，
+琳温希望将自己的作品卖出并将部分所得捐给慈善机构。（网页截图）
+                            </p>
+                        </div>
+                        <div class="intera" docid="A30FNP9D9001NP9E">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A30FNP9D9001NP9E.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-photoset2 card-photoset card-left card-visible">
+                        <i class="card-flag card-flag-18"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/66/2014080621/A30FNPFD9001NPFE.html">
+
+                                <i style="height: 210px"></i>
+                                <span class="photoset-tile photoset3-0" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2Fkge8tvlt3mVOSDbEMuDCmg%3D%3D%2F7916602467243078288.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset3-1" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2FrMzJcc-hbhsl9rFUvHojFQ%3D%3D%2F7916856454429094495.jpg.10000x210.auto.jpg)"></span><span class="photoset-tile photoset3-2" style="background-image: url(http://s.cimg.163.com/i/easyread.ph.126.net%2F0hTHzcaTe37fdNxAjLxUQQ%3D%3D%2F7916489217545417643.jpg.10000x210.auto.jpg)"></span>
+                                <img src="images/easyread_002.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/66/2014080621/A30FNPFD9001NPFE.html">
+                                    <div class="title-mask"></div>
+                                    <span><i></i>久旱河南迎降雨 雨量难缓解旱情</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract noabstract">
+                            <p>&nbsp;</p>
+                        </div>
+                        <div class="intera" docid="A30FNPFD9001NPFE">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A30FNPFD9001NPFE.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">0</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-spic card-right card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/99/2014080708/A31J78IC900178ID.html">
+
+                                <img src="images/easyread_015.jpg" onerror="imgerr(this)" height="132">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/99/2014080708/A31J78IC900178ID.html">
+
+                                    <span>陈妍希甩掉一身脂肪 瘦身后被误认为侯佩岑</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>黄色缎面礼服尽显典雅气质，陈妍希到上海出席代言活动，为了显示瘦身有成还特别露出香肩和双臂，似乎要一雪之前被网友戏称是小笼包的前耻。艺人陈妍希:“还是需要非常非常严格的控制自己水肿的体质，还是要尽力的去维持，饮食非常轻淡，再加上努力的运动。</p>
+                        </div>
+                        <div class="intera" docid="A31J78IC900178ID">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31J78IC900178ID.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">4</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-pic card-left card-visible">
+                        <i class="card-flag card-flag-6"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/6/2014080707/A30J6P7K00084TUP.html">
+
+                                <i style="height: 323px"></i>
+
+                                <img src="images/img4.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/6/2014080707/A30J6P7K00084TUP.html">
+                                    <div class="title-mask"></div>
+                                    <span>与奥迪A6同级 封丘实拍进口现代捷恩斯</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>作为进口现代劳恩斯的全新换代车型，决定重新启用第一代车型的最初定名-捷恩斯（Genesis）。就是这么一款还回自我的车型，将于8月18日正式在中国上市，那么未来它是否能够在中大型车市场占有一席之地呢？在车展后封丘汽车再在带您领略进口现代捷恩斯的风范！</p>
+                        </div>
+                        <div class="intera" docid="A30J6P7K00084TUP">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.auto.163.com/auto_bbs/A30J6P7K00084TUP.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">336</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-pic card-visible">
+                        <i class="card-flag card-flag-6"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/99/2014080615/A2VPI5F30008572S.html">
+
+                                <i style="height: 273px"></i>
+
+                                <img src="images/img1_003.jpg" onerror="imgerr(this)">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/99/2014080615/A2VPI5F30008572S.html">
+                                    <div class="title-mask"></div>
+                                    <span>易哥星闻:女警调戏保时捷男</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>版权声明:本文版权为封丘汽车所有，转载请注明出处。藐视交警执法，拘留3天……你跪下来也没有用！”。</p>
+                        </div>
+                        <div class="intera" docid="A2VPI5F30008572S">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">0</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.auto.163.com/auto_bbs/A2VPI5F30008572S.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">185</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="card card-spic card-visible">
+                        <i class="card-flag card-flag-1"></i>
+                        <div class="cardtitle pictitle">
+                            <span class="bigpic"><a href="http://j.news.163.com/docs/10/2014080611/A2VC9GTK90019GTL.html">
+
+                                <img src="images/easyread_004.jpg" onerror="imgerr(this)" height="132">
+                            </a></span>
+                            <h2>
+                                <a href="http://j.news.163.com/docs/10/2014080611/A2VC9GTK90019GTL.html">
+
+                                    <span>想赴台生活 大陆一男子从厦门游8小时到金门被抓</span>
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="abstract">
+                            <p>据台湾《联合报》报道，台湾金门岸巡总队昨于烈屿乡狮屿岸边查获吴姓大陆籍男子，吴嫌花了8小时，从厦门游泳到烈屿，岸巡总队在侦讯过后，移送地检署，全案依法侦办中。吴嫌说，他生活无以为继，才会想过来金门，所以筹划了半年就游泳过来。</p>
+                        </div>
+                        <div class="intera" docid="A2VC9GTK90019GTL">
+                            <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
+                            <a class="btn-commend" data-action="ding" title="推荐">
+                                <i class="btn-card"></i>
+                                <span class="btn-count">5</span>
+                            </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A2VC9GTK90019GTL.html#mainjnewscomment">
+                                <i class="btn-card"></i>
+                                <span class="tiecount">280</span>
+                            </a><a data-action="share" class="btn-share">
+                                <i class="btn-card"></i>
+                                <span class="btn-over">
+                                    <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+
+
+
+    <div class="gotop" id="go2top">
+        <div class="gotop-inner">
+            <a href="javascript:" target="_self" class="gotop_qr">
+                <span>
+                    <label>扫描二维码访问手机荐新闻</label><i></i></span>
+            </a>
+            <a title="返回顶部" class="gotop_back"></a>
+        </div>
+    </div>
+
+
+    <div class="N-nav-bottom" style="visibility: visible;">
+        <div class="N-nav-bottom-main">
+            <div class="ntes_foot_link">
+                <span class="N-nav-bottom-copyright"><span class="N-nav-bottom-copyright-icon">©</span> 1997-2014 封丘公司版权所有</span>
+                <a href="http://corp.163.com/">About NetEase</a> | 
+	<a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> | 
+	<a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> | 
+	<a href="http://corp.163.com/gb/job/job.html">招聘信息</a> | 
+	<a href="http://help.163.com/">客户服务</a> | 
+	<a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> | 
+	<a href="http://emarketing.biz.163.com/">广告服务</a> | 
+	<a href="http://sitemap.163.com/">网站地图</a> | 
+	<a href="http://t.163.com/zt/feedback">意见反馈</a> | 
+	<a href="http://www.bjjubao.org/index.htm">不良信息举报</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/ntes_jslib_1.js"></script>
+    <script src="js/ne.js"></script>
+    <script src="js/footegOJpqcpEXsL.js" charset="utf-8"></script>
+</body>
+</html>
