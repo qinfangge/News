@@ -1,19 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using CMS.BLL;
+using Utils;
 
 namespace CMS.Web
 {
     public partial class Detail : System.Web.UI.Page
     {
         public string strid = "";
+        private static IPSeeker seeker = null;
+
+        public Detail()
+        {
+            
+            seeker = new IPSeeker(Server.MapPath("~/App_Data/QQWry.Dat"));//纯真IP地址库存放目录！！
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!Page.IsPostBack)
             {
                 if (Request.Params["id"] != null && Request.Params["id"].Trim() != "")
@@ -44,6 +54,25 @@ namespace CMS.Web
             AddTime.Text = model.addTime.Value.ToString("yyyy-MM-dd H:m:s");
             Hits.Text = (model.hit.Value + 1).ToString();
             #endregion
+
+            #region 显示最热评论
+            CMS.BLL.Comment commentBll = new CMS.BLL.Comment();
+            DataSet ds = new DataSet();
+            ds=commentBll.GetList(10, "", "dig asc");
+            HotReplayRepeater.DataSource = ds;
+            HotReplayRepeater.DataBind();
+            CommentCount.Text = (commentBll.GetRecordCount("newsId=" + id)).ToString();
+            #endregion
+            #region 显示最新评论
+          
+            ds=commentBll.GetList(10, "", "id desc");
+            NewReplayRepeater.DataSource = ds;
+            NewReplayRepeater.DataBind();
+            #endregion
+
+            
+
+
             #region 设置SEO
             Page.Title = model.title;
             HtmlMeta keyWords = new HtmlMeta();
@@ -76,5 +105,19 @@ namespace CMS.Web
 
         }
         #endregion
+
+        protected static string  GetAddress(string ip)
+        {
+            string address = "未知区域";
+          
+            System.Net.IPAddress ipaddr = System.Net.IPAddress.Parse(ip);
+            IPLocation loc = seeker.GetLocation(ipaddr);
+            if (loc != null)
+            {
+                address = loc.Country + loc.Zone;
+            }
+            return address;
+        }
+        
     }
 }

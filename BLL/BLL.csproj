@@ -106,7 +106,9 @@
     <Compile Include="Advertisement.cs" />
     <Compile Include="Attachment.cs" />
     <Compile Include="Attribute.cs" />
+    <Compile Include="Avatar.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="FriendLink.cs" />
     <Compile Include="GuestBook.cs" />
     <Compile Include="Investment.cs" />

@@ -13,15 +13,6 @@ namespace CMS.Web {
     public partial class Detail {
         
         /// <summary>
-        /// form1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// CurrentPosition1 控件。
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace CMS.Web {
         protected global::System.Web.UI.WebControls.Literal Hits;
         
         /// <summary>
+        /// CommentCount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal CommentCount;
+        
+        /// <summary>
         /// Content 控件。
         /// </summary>
         /// <remarks>
@@ -74,5 +74,41 @@ namespace CMS.Web {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Content;
+        
+        /// <summary>
+        /// UnLoginPanel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel UnLoginPanel;
+        
+        /// <summary>
+        /// LoginPanel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LoginPanel;
+        
+        /// <summary>
+        /// HotReplayRepeater 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater HotReplayRepeater;
+        
+        /// <summary>
+        /// NewReplayRepeater 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater NewReplayRepeater;
     }
 }

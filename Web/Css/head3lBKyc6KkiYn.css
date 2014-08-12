@@ -3503,12 +3503,12 @@ h1:hover img.topbar_qr {
         padding: 35px 0 10px;
     }
 
-        .rightbar-caption .user-info form {
+        .rightbar-caption .user-info  {
             margin-left: 10px;
             position: relative;
         }
 
-            .rightbar-caption .user-info form .form-group {
+            .rightbar-caption .user-info  .form-group {
                 margin-bottom: 16px;
             }
 
@@ -3528,22 +3528,22 @@ h1:hover img.topbar_qr {
         _background-image: url(../images/icons4.gif);
     }
 
-    .rightbar-caption .user-info form .form-group input, .rightbar-caption .user-info form .form-group button {
+    .rightbar-caption .user-info  .form-group input, .rightbar-caption .user-info  .form-group button {
         outline: 0;
     }
 
-    .rightbar-caption .user-info form .form-group input {
+    .rightbar-caption .user-info  .form-group input {
         padding: 11px 13px 11px;
         border: 1px solid #d4d4d4;
         width: 228px;
         color: #666;
     }
 
-        .rightbar-caption .user-info form .form-group input::-webkit-input-placeholder {
+        .rightbar-caption .user-info  .form-group input::-webkit-input-placeholder {
             color: #999;
         }
 
-    .rightbar-caption .user-info form .form-group .btn-submit {
+    .rightbar-caption .user-info  .form-group .btn-submit {
         background-color: #dd4232;
         color: #fff;
         padding: 11px 15px;
@@ -3556,7 +3556,7 @@ h1:hover img.topbar_qr {
         vertical-align: middle;
     }
 
-    .rightbar-caption .user-info form .badge-group {
+    .rightbar-caption .user-info  .badge-group {
         font-size: 0;
         vertical-align: middle;
         display: inline-block;
@@ -3565,12 +3565,12 @@ h1:hover img.topbar_qr {
         margin-left: 15px;
     }
 
-        .rightbar-caption .user-info form .badge-group a, .rightbar-caption .user-info form .badge-group a:hover, .rightbar-caption .user-info form .badge-group a:visited {
+        .rightbar-caption .user-info  .badge-group a, .rightbar-caption .user-info  .badge-group a:hover, .rightbar-caption .user-info form .badge-group a:visited {
             color: #a7a7a7;
             font-size: 12px;
         }
 
-        .rightbar-caption .user-info form .badge-group .regist {
+        .rightbar-caption .user-info  .badge-group .regist {
             padding-right: 10px;
             border-right: 1px solid #a7a7a7;
             margin-right: 10px;
@@ -3579,12 +3579,12 @@ h1:hover img.topbar_qr {
             *zoom: 1;
         }
 
-    .rightbar-caption .user-info form .third {
+    .rightbar-caption .user-info  .third {
         color: #a7a7a7;
         padding: 13px;
     }
 
-    .rightbar-caption .user-info form .weibo, .rightbar-caption .user-info form .qzone, .rightbar-caption .user-info form .yixin {
+    .rightbar-caption .user-info  .weibo, .rightbar-caption .user-info  .qzone, .rightbar-caption .user-info form .yixin {
         display: inline-block;
         *display: inline;
         *zoom: 1;
@@ -3596,15 +3596,15 @@ h1:hover img.topbar_qr {
         vertical-align: middle;
     }
 
-    .rightbar-caption .user-info form .weibo {
+    .rightbar-caption .user-info  .weibo {
         background-position: 0 -1px;
     }
 
-    .rightbar-caption .user-info form .qzone {
+    .rightbar-caption .user-info  .qzone {
         background-position: -28px -1px;
     }
 
-    .rightbar-caption .user-info form .yixin {
+    .rightbar-caption .user-info  .yixin {
         background-position: 0 -25px;
     }
 

@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="false" CodeBehind="Home.Master.cs" Inherits="CMS.Web.Home.Home" %>
 
-<%@ Register src="../Controls/Footer.ascx" tagname="Footer" tagprefix="uc1" %>
+<%@ Register Src="../Controls/Footer.ascx" TagName="Footer" TagPrefix="uc1" %>
+<%@ Register Src="~/Controls/NewsModel.ascx" TagPrefix="uc1" TagName="NewsModel" %>
+<%@ Register Src="~/Controls/NewRecommendModel.ascx" TagPrefix="uc1" TagName="NewRecommendModel" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,16 +14,16 @@
     <asp:Literal ID="SEODescription" runat="server"></asp:Literal>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-     <meta name="viewport" content="width=1000,user-scalable=0"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/f2e/news/commend/images/appicon.png"/>
-    <link href="/css/head3lBKyc6KkiYn.css" rel="stylesheet"/>
-    <link href="/css/home.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=1000,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/f2e/news/commend/images/appicon.png" />
+    <%-- <link href="/css/head3lBKyc6KkiYn.css" rel="stylesheet"/>
+    <link href="/css/home.css" rel="stylesheet"/>--%>
 
-    
+
     <script type='text/javascript' src="Js/jquery-1.6.1.min.js"></script>
-    
+
     <script type='text/javascript'>
         $(function () {
 
@@ -61,49 +63,52 @@
     <form id="form1" runat="server">
         <div>
             <asp:Repeater ID="MainNav" runat="server">
-                    <ItemTemplate>
-                        <li <%#this.CurrentLink==Eval("link").ToString()?"class='active'":"" %>><a  channel="<%#Eval("id") %>" target='<%#(bool)Eval("target")?"_balnk":"_self" %>' href="<%#Eval("link") %>"><%#Eval("name") %> </a></li>
-                    </ItemTemplate>
-                </asp:Repeater>
+                <ItemTemplate>
+                    <li <%#this.CurrentLink==Eval("link").ToString()?"class='active'":"" %>><a channel="<%#Eval("id") %>" target='<%#(bool)Eval("target")?"_balnk":"_self" %>' href="<%#Eval("link") %>"><%#Eval("name") %> </a></li>
+                </ItemTemplate>
+            </asp:Repeater>
 
             <div id="topbar" class="topbar">
-    <h1 class=""><a title="网易荐新闻" target="_self" href="/">网易荐新闻</a></h1>
+                <h1 class=""><a title="网易荐新闻" target="_self" href="/">网易荐新闻</a></h1>
 
-    <div class="topbar-inner">
-        <div class="mainnav">
-            <ul id="mainlinks" class="mainlnks mainlnks-left" style="white-space: nowrap; padding-left: 91px; overflow: visible;">
-                <li class="active">
-                                         <a target="_self" href="/home/#loginfeed">推荐动态</a>
-                                     </li>
-                                <li>
-                    <a target="_self" href="/home/settings/#loginperson">个人信息</a>
-                </li>
-                                <li id="mainnav-line" style="display: none; width: 66px; left: 105px;" class="underline"></li>
-            </ul>
-            <a title="荐新闻首页" target="_self" href="/#loginreturn" class="backto">返回荐新闻</a>
-            <a title="返回列表页" href="/" id="ep-close" class="ep-close"></a>
-      <div class="ep-sidetools ep-lefttools">
-        <a href="javascript:" data-action="navleft" class="ep-nav ep-nav-pc ep-nav-left"><i></i><label>上一篇：</label><span id="ep-prev"></span></a>
-      </div>
-      <div class="ep-sidetools ep-righttools">
-        <div class="ep-sidetools-group">
-          <a title="推荐此新闻" class="ep-tool-jian js-upcount" data-action="ding">0</a>
-          <a data-hint="不感兴趣" title="不感兴趣" class="ep-tool-dislike" data-action="remove"></a>
-          <a title="跟贴" target="_self" class="ep-tool-comment js-tiecount" data-action="tieanchor">0</a>
-          <div class="ep-tool-share" data-action="share">
-            <div class="share-wrap">
-              <a title="分享到易信" class="share-yixin"></a>
-              <a title="分享到网易微博" class="share-163"></a>
-              <a title="分享到QQ空间" class="share-qzone"></a>
-              <a title="分享到新浪微博" class="share-sina"></a>
+                <div class="topbar-inner">
+                    <div class="mainnav">
+                        <ul id="mainlinks" class="mainlnks mainlnks-left" style="white-space: nowrap; padding-left: 91px; overflow: visible;">
+                            <li class="active">
+                                <a target="_self" href="/Home/">推荐动态</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="/Home/Profile.aspx">个人信息</a>
+                            </li>
+                            <li id="mainnav-line" style="display: none; width: 66px; left: 105px;" class="underline"></li>
+                        </ul>
+                        <a title="荐新闻首页" target="_self" href="/" class="backto">返回荐新闻</a>
+                        <a title="返回列表页" href="/" id="ep-close" class="ep-close"></a>
+                        <div class="ep-sidetools ep-lefttools">
+                            <a href="javascript:" data-action="navleft" class="ep-nav ep-nav-pc ep-nav-left"><i></i>
+                                <label>上一篇：</label><span id="ep-prev"></span></a>
+                        </div>
+                        <div class="ep-sidetools ep-righttools">
+                            <div class="ep-sidetools-group">
+                                <a title="推荐此新闻" class="ep-tool-jian js-upcount" data-action="ding">0</a>
+                                <a data-hint="不感兴趣" title="不感兴趣" class="ep-tool-dislike" data-action="remove"></a>
+                                <a title="跟贴" target="_self" class="ep-tool-comment js-tiecount" data-action="tieanchor">0</a>
+                                <div class="ep-tool-share" data-action="share">
+                                    <div class="share-wrap">
+                                        <a title="分享到易信" class="share-yixin"></a>
+                                        <a title="分享到网易微博" class="share-163"></a>
+                                        <a title="分享到QQ空间" class="share-qzone"></a>
+                                        <a title="分享到新浪微博" class="share-sina"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:" data-action="navright" class="ep-nav ep-nav-pc ep-nav-right"><i></i>
+                                <label>下一篇：</label><span id="ep-next"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <iframe class="iframe_hidden" src="http://news.163.com/special/f2e/commend_proxy.html"></iframe>
             </div>
-          </div>
-        </div>
-        <a href="javascript:" data-action="navright" class="ep-nav ep-nav-pc ep-nav-right"><i></i><label>下一篇：</label><span id="ep-next"></span></a>
-      </div>
-        </div>
-    </div>
-<iframe class="iframe_hidden" src="http://news.163.com/special/f2e/commend_proxy.html"></iframe></div>
 
             <!--<div class="navibar">
                 <div class="header_top  clearfix">
@@ -135,14 +140,59 @@
 
             </div>-->
 
-          
 
-            
-            <div id="content" style="width:auto;">
-                <div class="mainwrap commend-eploaded">
-                <asp:ContentPlaceHolder ID="Main" runat="server">
-                </asp:ContentPlaceHolder>
+
+
+            <div id="content" style="width: auto;">
+                <div class="main-wrapper">
+                    <div class="rightbar">
+                        <div class="rightbar-caption">
+                            <%--<div id="weather" class="weather">
+                                <div class="clearfix">
+                                    <a class="city" href="#">上海</a>
+                                    <div class="weather-bg weather-7">
+                                        <span class="weather-name">小雨</span>
+
+                                        <div class="weather-staus">
+                                            <span class="weather-deg" title="24~28度">24~28<label>°</label></span>
+                                        </div>
+                                    </div>
+                                    <div id="mode-switch" class="mode-switch">
+                                        <a title="列表式浏览" class="mode-list" target="_self" href="#list"></a>
+                                        <a title="卡片式浏览" class="mode-card" target="_self" href="#card"></a>
+                                    </div>
+                                </div>
+                                <div style="display: none;" class="weather-citylist-wrap weather-citylist-wrap2">
+                                    <div class="weather-cityaz"><a class="weather-az-active" href="javascript:">热门</a><a href="javascript:">A</a><a href="javascript:">B</a><a href="javascript:">C</a><a href="javascript:">D</a><a href="javascript:">E</a><a href="javascript:">F</a><a href="javascript:">G</a><a href="javascript:">H</a><a href="javascript:">J</a><a href="javascript:">K</a><a href="javascript:">L</a><a href="javascript:">M</a><a href="javascript:">N</a><a href="javascript:">P</a><a href="javascript:">Q</a><a href="javascript:">R</a><a href="javascript:">S</a><a href="javascript:">T</a><a href="javascript:">W</a><a href="javascript:">X</a><a href="javascript:">Y</a><a href="javascript:">Z</a></div>
+                                    <div class="weather-citylist"><a code="101010100" href="javascript:">北京</a><a code="101020100" href="javascript:">上海</a><a code="101290101" href="javascript:">昆明</a><a code="101210101" href="javascript:">杭州</a><a code="101280101" href="javascript:">广州</a><a code="101270101" href="javascript:">成都</a><a code="101110101" href="javascript:">西安</a><a code="101190101" href="javascript:">南京</a><a code="101280601" href="javascript:">深圳</a><a code="101040100" href="javascript:">重庆</a><a code="101250101" href="javascript:">长沙</a><a code="101070101" href="javascript:">沈阳</a><a code="101230201" href="javascript:">厦门</a><a code="101200101" href="javascript:">武汉</a><a code="101310101" href="javascript:">海口</a><a code="101130101" href="javascript:">乌鲁木齐</a><a code="101120201" href="javascript:">青岛</a><a code="101070201" href="javascript:">大连</a><a code="101050101" href="javascript:">哈尔滨</a><a code="101310201" href="javascript:">三亚</a><a code="101060101" href="javascript:">长春</a><a code="101300101" href="javascript:">南宁</a><a code="101260101" href="javascript:">贵阳</a><a code="101230101" href="javascript:">福州</a><a code="101180101" href="javascript:">郑州</a><a code="101120101" href="javascript:">济南</a><a code="101300501" href="javascript:">桂林</a><a code="101030100" href="javascript:">天津</a><a code="101100101" href="javascript:">太原</a><a code="101240101" href="javascript:">南昌</a><a code="101140101" href="javascript:">拉萨</a><a code="101150101" href="javascript:">西宁</a><a code="101340101" href="javascript:">台北</a></div>
+                                </div>
+                            </div>--%>
+
+                            <div id="user-rightbar-login" class="user-info">
+                                <div style="display: block;" class="user-main">
+                                    <a class="avatar" href="/home/">
+                                        <asp:Image ID="MyAvatar" runat="server" /></a>
+                                    <div class="user-name">
+                                        <a href="/home/">封丘门户网</a>
+                                    </div>
+                                    <div class="badge-group">
+                                        <a class="reason" href="/home/">
+                                            <span id="recNum">4</span>
+                                            推荐&nbsp;
+                    <span id="shareNum">2</span>
+                                            分享
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <uc1:NewsModel NewsModelName="今日新闻热点" runat="server" ID="NewsModel" />
+                        <div class="ne-login-bg"></div>
+                        <uc1:NewRecommendModel NewsModelName="大家刚刚推荐" runat="server" ID="NewRecommendModel" />
                     </div>
+                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
             <!--
             <div class="footer">
@@ -167,8 +217,8 @@
 
             </div>
 -->
-            
-    
+
+
             <uc1:Footer ID="Footer1" runat="server" />
 
         </div>

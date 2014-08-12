@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AuthCodeHttpHander.cs" />
     <Compile Include="DESEncrypt.cs" />
+    <Compile Include="IPSeeker.cs" />
     <Compile Include="MyCache.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Encrypt.cs" />

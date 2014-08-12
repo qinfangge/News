@@ -5,6 +5,7 @@ using CMS.BLL;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using Utils;
 namespace UnitTestProject1
 {
     [TestClass]
@@ -27,6 +28,21 @@ namespace UnitTestProject1
             MyCache myCache = new MyCache();
             myCache.Path = @"C:\data.das";
             Console.WriteLine(myCache.GetCache());
+        }
+         [TestMethod]
+        public void IPTest()
+        {
+            string ip = "58.247.46.186";//Request.ServerVariables.Get("REMOTE_ADDR");//自动获取用户IP 
+            //string ip = TextBox1.Text.Trim(); 
+            if (ip == string.Empty) return;
+            IPSeeker seeker = new IPSeeker(@"E:\projects\网站建设\新闻\News\Web\App_Data\QQWry.Dat");//纯真IP地址库存放目录！！
+            System.Net.IPAddress ipaddr = System.Net.IPAddress.Parse(ip);
+            IPLocation loc = seeker.GetLocation(ipaddr);
+            if (loc == null)
+            {
+                Console.Write("指定的IP地址无效！");
+            }
+            Console.Write("地址:" + loc.Country + loc.Zone);
         }
 
 

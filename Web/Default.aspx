@@ -2,6 +2,8 @@
 <%@ Import Namespace="tk.tingyuxuan.utils" %>
 <%@ Register Src="Controls/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 
+<%@ Register src="Controls/NewsModel.ascx" tagname="NewsModel" tagprefix="uc2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
     <link href="css/base/pager.css" rel="stylesheet"/>
 </asp:Content>
@@ -29,7 +31,7 @@
                 </div>
             </div>
             <div class="user-info" id="user-rightbar-login">
-                <form autocomplete="off">
+              <%--  <form autocomplete="off">--%>
                     <div class="ntes-loginframe-tips"></div>
                     <div class="form-group">
                         <input value="zhongpaiwang@126.com" name="username" placeholder="封丘通行证/邮箱登陆" type="text">
@@ -54,7 +56,7 @@
                         <!--<a href="javascript:openWin('/oauth/login?type=SINA')" target="_self" class="qzone"></a>-->
                         <a href="javascript:openWin('/oauth/login?type=YIXIN')" target="_self" class="yixin" title="易信登录"></a>
                     </div>
-                </form>
+                <%--</form>--%>
                 <div class="user-main" style="display: none;">
                     <a href="" class="avatar"></a>
                     <div class="user-name">
@@ -71,79 +73,8 @@
                 </div>
             </div>
         </div>
-        <div class="ranking-list">
-            <ul class="nav-list">
-                <li>
-                    <a class="item">今日热点新闻</a>
-                </li>
-            </ul>
-            <div>
-                <div class="item-wrapper active">
-                    <ul id="ranking-wrapper">
-                        <li class="item-top3">
-                            <span class="num num-red">1</span>
-                            <div class="name">
-                                <a docid="A30RVQ4L00014SEH" href="http://j.news.163.com/docs/99/2014080701/A30RVQ4L00014SEH.html" srctype="106">房价下跌银行“被房东” 苏杭惊现“弃房断供”</a>
-                            </div>
-                        </li>
-                        <li class="item-top3">
-                            <span class="num num-red">2</span>
-                            <div class="name">
-                                <a docid="A2VORD6N9001RD6O" href="http://j.news.163.com/docs/10/2014080614/A2VORD6N9001RD6O.html" srctype="106">北影校花景甜后台到底有多硬？一起来扒女明星背景</a>
-                            </div>
-                        </li>
-                        <li class="item-top3">
-                            <span class="num num-red">3</span>
-                            <div class="name">
-                                <a docid="A300RQQ39001RQQ4" href="http://j.news.163.com/docs/10/2014080617/A300RQQ39001RQQ4.html" srctype="106">致命！饿的时候千万别吃10种食品</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">4</span>
-                            <div class="name">
-                                <a docid="A31D4J9500014AED" href="http://j.news.163.com/docs/1/2014080706/A31D4J9500014AED.html" srctype="106">东莞女模特半夜回家小巷内被施暴 警方调查(图)</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">5</span>
-                            <div class="name">
-                                <a docid="A30R5VOQ90015VOR" href="http://j.news.163.com/docs/99/2014080702/A30R5VOQ90015VOR.html" srctype="106">61岁钟镇涛再当新郎 婚前验精证实力在</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">6</span>
-                            <div class="name">
-                                <a docid="A2VBGPE100031H2L" href="http://j.news.163.com/docs/2/2014080611/A2VBGPE100031H2L.html" srctype="106">疑似比伯女友赛琳娜裸照流出 露胸半裸</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">7</span>
-                            <div class="name">
-                                <a docid="A2VVNAC59001NAC6" href="http://j.news.163.com/docs/2/2014080617/A2VVNAC59001NAC6.html" srctype="106">王珞丹晒自拍裙子拉链没拉  网友犀利调侃不忍直视</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">8</span>
-                            <div class="name">
-                                <a docid="A31EKNOO9001KNOP" href="http://j.news.163.com/docs/10/2014080707/A31EKNOO9001KNOP.html" srctype="106">网曝郑州小三被扒光衣服</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">9</span>
-                            <div class="name">
-                                <a docid="A30G85IM00031H2L" href="http://j.news.163.com/docs/2/2014080622/A30G85IM00031H2L.html" srctype="106">《色戒》王佳芝原型照片曝光 汤唯果真神还原</a>
-                            </div>
-                        </li>
-                        <li class="">
-                            <span class="num ">10</span>
-                            <div class="name">
-                                <a docid="A30QFHME00032KMI" href="http://j.news.163.com/docs/99/2014080701/A30QFHME00032KMI.html" srctype="106">林建名女儿爆父拥二百名性伴 不知父吃壮阳药</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
+        <uc2:NewsModel ID="NewsModel1" NewsModelName="今日热点" runat="server" />
         <div class="ne-login-bg"></div>
         <div class="recent-hd">
             大家刚刚推荐
@@ -259,7 +190,7 @@
                                     <img alt="<%#HtmlHelper.SubStr(Eval("title").ToString(),16,false) %>" src="<%#ImageUtils.GetThumbImagePath(Eval("titleImage").ToString(),132,100,1) %>">
                                 </a></span>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
                                     <a title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>">
                                         <div class="title-mask"></div>
                                         <span><%#Eval("title") %></span>

@@ -28,12 +28,39 @@ namespace CMS.Web.Home
                 CurrentLink = Request.Url.PathAndQuery;
             }
 
-            
+
+
+            InitAvatar();//头像设置
             InitMainNav();//导航
             InitContact();//网站尾部
 
            
         }
+
+        #region
+        private void InitAvatar()
+        {
+            int userID = 1;
+            
+            CMS.BLL.Avatar bll = new BLL.Avatar();
+            string url = "";
+            CMS.Model.Avatar model = bll.GetAvatarByUserID(userID);
+            int width = 120;
+            int height = 120;
+            int id = 0;
+            if (model != null)
+            {
+                id = model.id;
+
+            }
+
+            url = width + "|" + height + "|" + id;
+            url = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(url)).Replace("+", "%2B");
+            url = url + ".jpg";
+            MyAvatar.ImageUrl = "/Avatar/" + url;
+
+        }
+        #endregion
         #region 初始化导航
         private void InitMainNav()
         {

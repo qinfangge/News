@@ -84,6 +84,9 @@
     <Content Include="Admin\Category\Add.aspx" />
     <Content Include="Admin\Category\List.aspx" />
     <Content Include="Admin\Category\Modify.aspx" />
+    <Content Include="Admin\Comment\Add.aspx" />
+    <Content Include="Admin\Comment\List.aspx" />
+    <Content Include="Admin\Comment\Modify.aspx" />
     <Content Include="Admin\CommonPage.aspx" />
     <Content Include="Admin\Config\Config.aspx" />
     <Content Include="Admin\Contact\Contact.aspx" />
@@ -486,6 +489,9 @@
     <Content Include="App_Data\noPic.jpg" />
     <Content Include="App_Data\UserType.xml" />
     <Content Include="App_Data\water.png" />
+    <Content Include="Admin\Avatar\Add.aspx" />
+    <Content Include="Admin\Avatar\List.aspx" />
+    <Content Include="Admin\Avatar\Modify.aspx" />
     <Content Include="bin\URLRewriter.dll" />
     <Content Include="Controls\Contact.ascx" />
     <Content Include="Controls\CurrentPosition.ascx" />
@@ -500,6 +506,7 @@
     <Content Include="Controls\ProjectModel.ascx" />
     <Content Include="Controls\NoticeModel.ascx" />
     <Content Include="Controls\SinglePageModel.ascx" />
+    <Content Include="Controls\NewRecommendModel.ascx" />
     <Content Include="Css\base\article.css" />
     <Content Include="Css\base\contact.css" />
     <Content Include="Css\base\footer.css" />
@@ -526,9 +533,12 @@
     <Content Include="Css\main.css" />
     <Content Include="Css\detail.css" />
     <Content Include="Css\Register.css" />
+    <Content Include="Css\head~tpf9An2yebrc.css" />
     <Content Include="Detail.aspx" />
     <Content Include="GuestBook.aspx" />
+    <Content Include="Home\Controls\UploadPic.ascx" />
     <Content Include="Home\Default.aspx" />
+    <Content Include="Home\Profile.aspx" />
     <Content Include="html\css\head3lBKyc6KkiYn.css" />
     <Content Include="html\detail.htm" />
     <Content Include="html\images\3370944321187314542.jpg" />
@@ -615,8 +625,10 @@
     <Content Include="Images\photoset.png" />
     <Content Include="Default.aspx" />
     <Content Include="Images\qr.png" />
+    <Content Include="Images\sns_icons.png" />
     <Content Include="Images\tougao.jpg" />
     <Content Include="Js\analysis.js" />
+    <Content Include="Js\base64.js" />
     <Content Include="Js\CheckBox.js" />
     <Content Include="Js\footegOJpqcpEXsL.js" />
     <Content Include="Js\jquery-1.6.1.min.js" />
@@ -648,6 +660,15 @@
     <Content Include="Js\libs\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="Js\libs\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="Js\libs\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Js\libs\uploadify\Change Log.txt" />
+    <Content Include="Js\libs\uploadify\jquery.uploadify.js" />
+    <Content Include="Js\libs\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Js\libs\uploadify\license.txt" />
+    <Content Include="Js\libs\uploadify\uploadify-cancel.png" />
+    <Content Include="Js\libs\uploadify\uploadify.css" />
+    <Content Include="Js\libs\uploadify\uploadify.swf" />
+    <Content Include="Js\libs\uploadify\__MACOSX\._Change Log.txt" />
+    <Content Include="Js\libs\uploadify\__MACOSX\._uploadify.swf" />
     <Content Include="Js\ne.js" />
     <Content Include="Js\ntes.js" />
     <Content Include="Js\ntes_jslib_1.js" />
@@ -749,6 +770,27 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Category\Modify.aspx.designer.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Comment\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Comment\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Comment\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Comment\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Comment\Modify.aspx.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Comment\Modify.aspx.designer.cs">
       <DependentUpon>Modify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\CommonPage.aspx.cs">
@@ -921,8 +963,38 @@
     <Compile Include="Admin\Role\Assign.aspx.designer.cs">
       <DependentUpon>Assign.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\Comment.ashx.cs">
+      <DependentUpon>Comment.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\Image.ashx.cs">
       <DependentUpon>Image.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Avatar\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Avatar\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Avatar\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Avatar\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Avatar\Modify.aspx.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Avatar\Modify.aspx.designer.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\Avatar.ashx.cs">
+      <DependentUpon>Avatar.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Contact.ascx.cs">
       <DependentUpon>Contact.ascx</DependentUpon>
@@ -1015,6 +1087,13 @@
     <Compile Include="Controls\SinglePageModel.ascx.designer.cs">
       <DependentUpon>SinglePageModel.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NewRecommendModel.ascx.cs">
+      <DependentUpon>NewRecommendModel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\NewRecommendModel.ascx.designer.cs">
+      <DependentUpon>NewRecommendModel.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1036,6 +1115,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\Controls\UploadPic.ascx.cs">
+      <DependentUpon>UploadPic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Controls\UploadPic.ascx.designer.cs">
+      <DependentUpon>UploadPic.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Home\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1049,6 +1135,13 @@
     </Compile>
     <Compile Include="Home\Home.Master.designer.cs">
       <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -1332,6 +1425,13 @@
     <Content Include="ashx\Image.ashx" />
     <Content Include="Admin\js\libs\ueditor\net\副本 imageManager.ashx" />
     <Content Include="Home\Home.Master" />
+    <Content Include="ashx\UploadHandler.ashx" />
+    <Content Include="Js\libs\uploadify\check-exists.php" />
+    <Content Include="Js\libs\uploadify\index.php" />
+    <Content Include="Js\libs\uploadify\uploadify.php" />
+    <Content Include="ashx\Avatar.ashx" />
+    <Content Include="ashx\Comment.ashx" />
+    <Content Include="App_Data\qqwry.dat" />
     <None Include="Properties\PublishProfiles\eedscqjy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
