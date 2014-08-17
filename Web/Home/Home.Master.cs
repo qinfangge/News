@@ -12,15 +12,21 @@ namespace CMS.Web.Home
     {
         public string keywords{set;get;}
         public string CurrentLink { set; get; }
+        protected CMS.Model.User user = null;
+        protected override void OnInit(EventArgs e)
+        {
+            if (Session["user"] == null)
+            {
+                Response.Redirect("/");
+            }
+            base.OnInit(e);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] != null)
             {
-                CMS.Model.User user=Session["user"] as CMS.Model.User;
-                NoLogin.Visible = false;
-                LoginName.Visible = true;
-                LoginName.Text = "您好，"+user.userName;
-                LoginName.NavigateUrl = "Admin/Index/Index.aspx";
+                user=Session["user"] as CMS.Model.User;
+               
             }
 
             if (!string.IsNullOrEmpty(Request["category"]))
@@ -37,14 +43,14 @@ namespace CMS.Web.Home
            
         }
 
-        #region
+        #region 头像设置
         private void InitAvatar()
         {
-            int userID = 1;
+           
             
             CMS.BLL.Avatar bll = new BLL.Avatar();
             string url = "";
-            CMS.Model.Avatar model = bll.GetAvatarByUserID(userID);
+            CMS.Model.Avatar model = bll.GetAvatarByUserID(user.id);
             int width = 120;
             int height = 120;
             int id = 0;

@@ -8,31 +8,92 @@ namespace CMS.Web.ashx
     /// <summary>
     /// Comment 的摘要说明
     /// </summary>
-    public class Comment : IHttpHandler
+    public class Comment : IHttpHandler,System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            CMS.Model.Comment model = new Model.Comment();
-            model.newsId = 72;
-            model.content = "汪小菲装逼结果碰到王思聪";
-            model.addTime = DateTime.Now;
-            model.userId = 1;
-            model.ip = GetLoginIp(context.Request);
-            model.isCheck = false;
-            model.Pid = 0;
-            model.dig = 10;
-            CMS.BLL.Comment bll = new BLL.Comment();
-            if (bll.Add(model)>0)
+            string type = context.Request["type"].ToString();
+            if (type == "1")
             {
-                context.Response.Write(1);
+                Reply(context);
             }
-            else
+
+            if (type == "2")
             {
-                context.Response.Write(0);
+                Dig(context);
             }
         }
+        /// <summary>
+        /// 顶
+        /// </summary>
+        protected void Dig(HttpContext context)
+        {
+            CMS.Model.Comment model = new Model.Comment();
+            CMS.BLL.Comment bll = new BLL.Comment();
+            int id = int.Parse(context.Request["id"].ToString());
+            model = bll.GetModel(id);
+            if (model != null)
+            {
+                model.dig += 1;
+                if (bll.Update(model))
+                {
+                    context.Response.Write(1);
+                }
+                else
+                {
+                
+                    context.Response.Write(0);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 回复
+        /// </summary>
+        protected void Reply(HttpContext context)
+        {
+           
+
+            try
+            {
+                CMS.Model.Comment model = new Model.Comment();
+                int newsId = int.Parse(context.Request["newsId"].ToString());
+                string content = HttpUtility.HtmlEncode(context.Request["content"].ToString());
+                int pid = int.Parse(context.Request["pid"].ToString());
+                model.newsId = newsId;
+                model.content = content;
+                model.addTime = DateTime.Now;
+                CMS.Model.User user= context.Session["user"] as CMS.Model.User;
+                model.userId = user.id ;
+                model.ip = GetLoginIp(context.Request);
+                model.isCheck = false;
+                model.Pid = pid;
+                model.dig = 0;
+                CMS.BLL.Comment bll = new BLL.Comment();
+                if (bll.Add(model) > 0)
+                {
+                    context.Response.Write(1);
+                }
+                else
+                {
+                    context.Response.Write(0);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                context.Response.Write(ex.Message);
+              
+            }
+
+           
+        }
+
+
+
 
         /// <summary>
         /// 获取远程访问用户的Ip地址

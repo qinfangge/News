@@ -622,6 +622,7 @@
     <Content Include="Images\img4.jpg" />
     <Content Include="Images\img4.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Images\noAvatar.jpg" />
     <Content Include="Images\photoset.png" />
     <Content Include="Default.aspx" />
     <Content Include="Images\qr.png" />
@@ -635,6 +636,45 @@
     <Content Include="Js\jquery.KinSlideshow-1.2.1.min.js" />
     <Content Include="Js\koala.min.1.5.js" />
     <Content Include="Js\lanren.js" />
+    <Content Include="Js\libs\artDialog\css\ui-dialog.css" />
+    <Content Include="Js\libs\artDialog\dist\dialog-min.js" />
+    <Content Include="Js\libs\artDialog\dist\dialog-plus-min.js" />
+    <Content Include="Js\libs\artDialog\dist\dialog-plus.js" />
+    <Content Include="Js\libs\artDialog\dist\dialog.js" />
+    <Content Include="Js\libs\artDialog\doc\css\doc.css" />
+    <Content Include="Js\libs\artDialog\doc\index.html" />
+    <Content Include="Js\libs\artDialog\doc\js\doc.js" />
+    <Content Include="Js\libs\artDialog\doc\js\sh_languages.js" />
+    <Content Include="Js\libs\artDialog\Gruntfile.js" />
+    <Content Include="Js\libs\artDialog\lib\jquery-1.10.2.js" />
+    <Content Include="Js\libs\artDialog\lib\require.js" />
+    <Content Include="Js\libs\artDialog\lib\sea.js" />
+    <Content Include="Js\libs\artDialog\src\dialog-config.js" />
+    <Content Include="Js\libs\artDialog\src\dialog-plus.js" />
+    <Content Include="Js\libs\artDialog\src\dialog.js" />
+    <Content Include="Js\libs\artDialog\src\drag.js" />
+    <Content Include="Js\libs\artDialog\src\global_modules\jquery.js" />
+    <Content Include="Js\libs\artDialog\src\popup.js" />
+    <Content Include="Js\libs\artDialog\test\align-overflow.html" />
+    <Content Include="Js\libs\artDialog\test\align.html" />
+    <Content Include="Js\libs\artDialog\test\button.html" />
+    <Content Include="Js\libs\artDialog\test\close.html" />
+    <Content Include="Js\libs\artDialog\test\content.html" />
+    <Content Include="Js\libs\artDialog\test\dialog-drag.html" />
+    <Content Include="Js\libs\artDialog\test\fixed.html" />
+    <Content Include="Js\libs\artDialog\test\focus.html" />
+    <Content Include="Js\libs\artDialog\test\follow.html" />
+    <Content Include="Js\libs\artDialog\test\iframe.html" />
+    <Content Include="Js\libs\artDialog\test\iframe\dialog-content.html" />
+    <Content Include="Js\libs\artDialog\test\iframe\dialog-input.html" />
+    <Content Include="Js\libs\artDialog\test\iframe\index.html" />
+    <Content Include="Js\libs\artDialog\test\iframe\main.html" />
+    <Content Include="Js\libs\artDialog\test\loading.html" />
+    <Content Include="Js\libs\artDialog\test\show-element.html" />
+    <Content Include="Js\libs\artDialog\test\show-event.html" />
+    <Content Include="Js\libs\artDialog\test\show.html" />
+    <Content Include="Js\libs\artDialog\test\showModal.html" />
+    <Content Include="Js\libs\artDialog\test\title.html" />
     <Content Include="Js\libs\My97DatePicker\calendar.js" />
     <Content Include="Js\libs\My97DatePicker\config.js" />
     <Content Include="Js\libs\My97DatePicker\lang\en.js" />
@@ -995,6 +1035,9 @@
     </Compile>
     <Compile Include="ashx\Avatar.ashx.cs">
       <DependentUpon>Avatar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Contact.ascx.cs">
       <DependentUpon>Contact.ascx</DependentUpon>
@@ -1399,7 +1442,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Cache\" />
-    <Folder Include="Components\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -1432,6 +1474,12 @@
     <Content Include="ashx\Avatar.ashx" />
     <Content Include="ashx\Comment.ashx" />
     <Content Include="App_Data\qqwry.dat" />
+    <Content Include="Js\libs\artDialog\.gitignore" />
+    <Content Include="Js\libs\artDialog\doc\index.md" />
+    <Content Include="Js\libs\artDialog\LICENSE.md" />
+    <Content Include="Js\libs\artDialog\package.json" />
+    <Content Include="Js\libs\artDialog\README.md" />
+    <Content Include="ashx\User.ashx" />
     <None Include="Properties\PublishProfiles\eedscqjy.pubxml" />
   </ItemGroup>
   <PropertyGroup>

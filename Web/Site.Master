@@ -20,11 +20,12 @@
     <link href="css/home.css" rel="stylesheet" />
 
 
-    <script type='text/javascript' src="Js/jquery-1.6.1.min.js"></script>
+    <%--<script type='text/javascript' src="Js/jquery-1.6.1.min.js"></script>--%>
+    <script src="Js/libs/artDialog/lib/jquery-1.10.2.js"></script>
 
     <script type='text/javascript'>
         $(function () {
-
+            
             var href = window.location.pathname + window.location.search;
 
             if (href.indexOf("pid")) {
@@ -34,23 +35,23 @@
                 href = href.replace(re, "/NewsList.aspx?category=$2");
             }
             href = window.decodeURI(href);
-            $(".nav a[href=" + href + "]").parent().addClass("on").siblings().removeClass();
-            $("#example-one").organicTabs();
+            //$(".nav a[href=" + href + "]").parent().addClass("on").siblings().removeClass();
+            //$("#example-one").organicTabs();
 
-            $("#searchButton").click(function () {
-                var keyWords = $.trim($("#keyWords").val());
+            //$("#searchButton").click(function () {
+            //    var keyWords = $.trim($("#keyWords").val());
 
-                if (keyWords == "") {
+            //    if (keyWords == "") {
 
-                    alert("请输入搜索的关键词!");
+            //        alert("请输入搜索的关键词!");
 
-                } else {
+            //    } else {
 
-                    window.location.href = "Search.aspx?keyWords=" + keyWords;
+            //        window.location.href = "Search.aspx?keyWords=" + keyWords;
 
-                }
-                return false;
-            });
+            //    }
+            //    return false;
+            //});
         });
 
     </script>

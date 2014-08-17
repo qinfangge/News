@@ -58,24 +58,6 @@ namespace CMS.Web.Home {
         protected global::System.Web.UI.WebControls.Repeater MainNav;
         
         /// <summary>
-        /// LoginName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LoginName;
-        
-        /// <summary>
-        /// NoLogin 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal NoLogin;
-        
-        /// <summary>
         /// MyAvatar 控件。
         /// </summary>
         /// <remarks>
@@ -83,6 +65,15 @@ namespace CMS.Web.Home {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image MyAvatar;
+        
+        /// <summary>
+        /// DigCount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DigCount;
         
         /// <summary>
         /// NewsModel 控件。

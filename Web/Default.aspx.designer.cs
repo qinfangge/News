@@ -13,6 +13,42 @@ namespace CMS.Web {
     public partial class Default {
         
         /// <summary>
+        /// LoginPanel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LoginPanel;
+        
+        /// <summary>
+        /// LoginInPanel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LoginInPanel;
+        
+        /// <summary>
+        /// Avatar 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Avatar;
+        
+        /// <summary>
+        /// DigCount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DigCount;
+        
+        /// <summary>
         /// NewsModel1 控件。
         /// </summary>
         /// <remarks>
@@ -20,6 +56,15 @@ namespace CMS.Web {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::CMS.Web.Controls.NewsModel NewsModel1;
+        
+        /// <summary>
+        /// NewRecommendModel1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CMS.Web.Controls.NewRecommendModel NewRecommendModel1;
         
         /// <summary>
         /// NewsRepeater 控件。

@@ -3642,6 +3642,7 @@ h1:hover img.topbar_qr {
     .rightbar-caption .user-main .badge-group {
         font-size: 0;
         text-align: center;
+        display:block;
     }
 
         .rightbar-caption .user-main .badge-group a, .rightbar-caption .user-main .badge-group a:visited {
@@ -3654,6 +3655,7 @@ h1:hover img.topbar_qr {
 
             .rightbar-caption .user-main .badge-group a:hover {
                 color: #dd4232;
+                font-size:18px;
             }
 
 .ne-login-bg {

@@ -4,13 +4,53 @@
 
 <%@ Register src="Controls/NewsModel.ascx" tagname="NewsModel" tagprefix="uc2" %>
 
+<%@ Register src="Controls/NewRecommendModel.ascx" tagname="NewRecommendModel" tagprefix="uc3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
     <link href="css/base/pager.css" rel="stylesheet"/>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".loginOut").click(function () {
+                var url = "/ashx/User.ashx";
+                var data = { a: "out" };
+                $.post(url, data, function (data) {
+                    if (data == "1") {
+                        window.location.reload();
+                    } else {
+                        window.location.reload();
+                    }
+                });
+            });
+            $(".btn-submit").click(function () {
+                var url = "/ashx/User.ashx";
+                var userName = $.trim($("input[name=password]").val());
+                var password = $.trim($("input[name=password]").val());
+
+                var data = { userName: userName, password: password, a: "in" };
+                $.post(url, data, function (data) {
+                    if (data == "1") {
+                        window.location.reload();
+                    } else {
+                        $(".ntes-loginframe-tips").css("top","9px").text("用户名或密码错误！").show();
+                       // d.content("网络繁忙，请稍后重试！").show();
+                    }
+                });
+
+                return false;
+            });
+
+
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div style="top: auto;" class="rightbar">
         <div class="rightbar-caption">
             <div class="weather" id="weather">
+                
+                <iframe name="weather_inc" src="http://cache.xixik.com.cn/11/shanghai/" width="200" height="15" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe>
                 <div class="clearfix">
                     <a href="#" class="city">上海</a>
                     <div class="weather-bg weather-1">
@@ -31,8 +71,8 @@
                 </div>
             </div>
             <div class="user-info" id="user-rightbar-login">
-              <%--  <form autocomplete="off">--%>
-                    <div class="ntes-loginframe-tips"></div>
+              <%--  <form autocomplete="off">--%><asp:Panel ID="LoginPanel" runat="server">
+                    <div class="ntes-loginframe-tips">用户名密码错误！</div>
                     <div class="form-group">
                         <input value="zhongpaiwang@126.com" name="username" placeholder="封丘通行证/邮箱登陆" type="text">
                     </div>
@@ -50,128 +90,44 @@
                             <a href="Reset.aspx">找回密码</a>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <%--<div class="form-group">
                         <span class="third">第三方登录</span>
                         <a href="javascript:openWin('/oauth/login?type=SINA')" target="_self" class="weibo" title="新浪微博登录"></a>
                         <!--<a href="javascript:openWin('/oauth/login?type=SINA')" target="_self" class="qzone"></a>-->
                         <a href="javascript:openWin('/oauth/login?type=YIXIN')" target="_self" class="yixin" title="易信登录"></a>
-                    </div>
+                    </div>--%>
+                  </asp:Panel>
                 <%--</form>--%>
-                <div class="user-main" style="display: none;">
-                    <a href="" class="avatar"></a>
+                <asp:Panel ID="LoginInPanel" runat="server">
+               
+                <div class="user-main" >
+                    <a href="/Home/" class="avatar">
+
+                         <asp:Image  ID="Avatar" ImageUrl="~/Images/noAvatar.jpg" runat="server" />
+                    </a>
                     <div class="user-name">
-                        <a href="">--</a>
+                        <a href="/Home/"><%=user.userName %></a>
                     </div>
                     <div class="badge-group">
-                        <a href="" class="reason">
-                            <span id="recNum">0</span>
+                        <a href="/Home/" class="reason">
+                            <span id="recNum"><asp:Literal ID="DigCount" runat="server">20</asp:Literal></span>
                             推荐&nbsp;
-                    <span id="shareNum">0</span>
-                            分享
+                            </a> |
+                         <a href="javascript:void(0)" class="reason loginOut">
+                    
+                            退出
                         </a>
                     </div>
                 </div>
+
+                     </asp:Panel>
             </div>
         </div>
         
         <uc2:NewsModel ID="NewsModel1" NewsModelName="今日热点" runat="server" />
         <div class="ne-login-bg"></div>
-        <div class="recent-hd">
-            大家刚刚推荐
-        </div>
-        <div class="recent-item-list">
-            <div style="top: -186px;" class="recent-item-list-wrapper">
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A300RTAB9001RTAC" data-url="/docs/8/2014080617/A300RTAB9001RTAC.html" docid="A300RTAB9001RTAC" srctype="107" class="recent-title">从小训练孩子攀岩</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/zouxm1984/">天戟沧雄</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A2VS980K9001980L" data-url="/docs/99/2014080616/A2VS980K9001980L.html" docid="A2VS980K9001980L" srctype="107" class="recent-title">iPhone 6真机组图现身Twitter：这次真不是机模</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/chinnoaaron/">chinnoaaron</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A31MLBMP9001LBMQ" data-url="/docs/8/2014080700/A31MLBMP9001LBMQ.html" docid="A31MLBMP9001LBMQ" srctype="107" class="recent-title">我去，从罚球线起跳啊！</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/t_macs@126.com/">流浪的球鞋</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A31I2I2R90012I2S" data-url="/docs/8/2014080708/A31I2I2R90012I2S.html" docid="A31I2I2R90012I2S" srctype="107" class="recent-title">照着这发型剪</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/rfwlli/">rfwlli</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A31EKNOO9001KNOP" data-url="/docs/10/2014080707/A31EKNOO9001KNOP.html" docid="A31EKNOO9001KNOP" srctype="107" class="recent-title">网曝郑州小三被扒光衣服</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/zjflbx/">乃们的丰兄</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A30MVQ7Q0011179O" data-url="http://mobile.163.com/14/0807/00/A30MVQ7Q0011179O.html" docid="A30MVQ7Q0011179O" srctype="107" class="recent-title">Note 4亮点全解析：三面屏幕配竹制后盖</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/me0mj/">就是我me0mj</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A31Q36M0900136M1" data-url="/docs/6/2014080710/A31Q36M0900136M1.html" docid="A31Q36M0900136M1" srctype="107" class="recent-title">奔驰全新防弹车型S Guard 可抗机枪子弹!</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/linyanri/">216587773</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A324CDNJ9001CDNK" data-url="/docs/2/2014080712/A324CDNJ9001CDNK.html" docid="A324CDNJ9001CDNK" srctype="107" class="recent-title">《爸爸去哪儿》杨阳洋是不合群？还是更有独立性？</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/yrx333/">Kiki16110193</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A31KBVU49001BVU5" data-url="/docs/1/2014080708/A31KBVU49001BVU5.html" docid="A31KBVU49001BVU5" srctype="107" class="recent-title">男孩烈日下摆茶摊为救灾人员送水解渴</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/lfj888@126.com/">lfj888126</a>]推荐</label>
-                    </div>
-                </div>
-
-                <div class="recent-item">
-                    <i></i>
-                    <div class="recent-detail">
-                        <a href="http://j.news.163.com/#detail/99/A30A0N9E90010N9F" data-url="/docs/99/2014080619/A30A0N9E90010N9F.html" docid="A30A0N9E90010N9F" srctype="107" class="recent-title">十分罕见：17张有些诡异的老照片</a>
-                        <label>[<a class="nickname" href="http://j.news.163.com/profile/yangm516/">yangm516</a>]推荐</label>
-                    </div>
-                </div>
-
-                <!--
-            <div class="recent-item ">
-		        <i></i>
-		        <div class="recent-detail">
-		            <a href="http://news.163.com/14/0318/11/9NK78O4300011229.html" docid="6597268778261368654">起底东莞"丐帮"：帮主为利润砸断幼童腿喂安眠药</a>
-		            <label>[绡罗]推荐</label>
-		        </div>
-		    </div>
-			-->
-            </div>
-        </div>
+        <uc3:NewRecommendModel ID="NewRecommendModel1" runat="server" />
+      
     </div>
 
     <div style="top: 105px;" class="commend-listwrap">
@@ -190,7 +146,7 @@
                                     <img alt="<%#HtmlHelper.SubStr(Eval("title").ToString(),16,false) %>" src="<%#ImageUtils.GetThumbImagePath(Eval("titleImage").ToString(),132,100,1) %>">
                                 </a></span>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
                                     <a title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>">
                                         <div class="title-mask"></div>
                                         <span><%#Eval("title") %></span>
@@ -208,12 +164,13 @@
                                 </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31NPSIG9001PSIH.html#mainjnewscomment">
                                     <i class="btn-card"></i>
                                     <span class="tiecount">1</span>
-                                </a><a data-action="share" class="btn-share">
+                                </a>
+                               <%-- <a data-action="share" class="btn-share">
                                     <i class="btn-card"></i>
                                     <span class="btn-over">
                                         <span class="lnk-share lnk-share-yixin" title="分享到易信" data-action="share"></span><span class="lnk-share lnk-share-sina" title="分享到新浪微博" data-action="share"></span>
                                     </span>
-                                </a>
+                                </a>--%>
                             </div>
                         </div>
                     </ItemTemplate>

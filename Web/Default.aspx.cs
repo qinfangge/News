@@ -12,11 +12,43 @@ namespace CMS.Web
     public partial class Default : System.Web.UI.Page
     {
         private int CategoryId = 19;
-        private string allCategory = "";
+        protected CMS.Model.User user = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             InitSEO();//初始化SEO
+
+            if (Session["user"] != null)
+            {
+                user = Session["user"] as CMS.Model.User;
+            }
+
+
+            #region 登录状态
+            //bool isLogin = false;
+            if (user != null)
+            {
+
+                LoginPanel.Visible = false;
+                LoginInPanel.Visible = true;
+                //CMS.BLL.Comment commentBll = new BLL.Comment();
+               // commentBll.GetRecordCount("userId=
+                //DigCount.Text = 20;
+
+               
+                InitAvatar();
+
+            }
+            else
+            {
+                LoginPanel.Visible = true;
+                LoginInPanel.Visible = false;
+
+               
+            }
+            #endregion
+
+
 
             StringBuilder strWhere = new StringBuilder("recommend=1");
             string orderBy = "addTime desc";
@@ -92,6 +124,30 @@ namespace CMS.Web
         }
         #endregion
 
+        #region 头像设置
+        private void InitAvatar()
+        {
+            int userID = user.id;
+
+            CMS.BLL.Avatar bll = new BLL.Avatar();
+            string url = "";
+            CMS.Model.Avatar model = bll.GetAvatarByUserID(userID);
+            int width = 120;
+            int height = 120;
+            int id = 0;
+            if (model != null)
+            {
+                id = model.id;
+
+            }
+
+            url = width + "|" + height + "|" + id;
+            url = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(url)).Replace("+", "%2B");
+            url = url + ".jpg";
+            Avatar.ImageUrl = "/Avatar/" + url;
+
+        }
+        #endregion
         protected void NewsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             

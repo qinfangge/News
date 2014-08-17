@@ -376,9 +376,53 @@ namespace CMS.DAL
 		}*/
 
 		#endregion  BasicMethod
-		#region  ExtensionMethod
+        #region  ExtensionMethod
+        /// <summary>
+        /// 分页获取数据列表 for sql 2000
+        /// </summary>
+        public DataSet GetListByPage(string condition, string order, int pageSize, int currentPage, bool isGeneral)
+        {
+            string condition2 = condition == "" ? "" : " AND " + condition;
+            condition = condition == "" ? "" : "where " + condition;
+            order = order == "" ? "" : " order by " + order;
+          
+            string strSql = string.Format(@"SELECT TOP  {0}  *
+                            FROM Comment
+                            WHERE id NOT IN
+                                        (
+                                        SELECT TOP  {1} id FROM Comment {2} {3}
+                                        )
+                            {4} {3}", pageSize, pageSize * (currentPage - 1), condition, order, condition2);
 
-		#endregion  ExtensionMethod
+            return DbHelperSQL.Query(strSql);
+
+        }
+
+        /// <summary>
+        /// 获取前几条数据
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <param name="orderby"></param>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public DataSet GetTopList(string strWhere, string orderby, int number)
+        {
+            //string strWhere2 = strWhere == "" ? "" : " AND " + strWhere;
+            strWhere = strWhere == "" ? "" : "where " + strWhere;
+
+            orderby = orderby == "" ? "" : " order by " + orderby;
+
+            string strSql = string.Format(@"SELECT DISTINCT  TOP  {0}  newsId
+                            FROM Comment
+                             {1} {2}", number, strWhere, orderby);
+
+            return DbHelperSQL.Query(strSql);
+
+        }
+
+
+
+        #endregion  ExtensionMethod
 	}
 }
 

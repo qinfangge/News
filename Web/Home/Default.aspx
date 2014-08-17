@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
     <link href="/css/base/pager.css" rel="stylesheet" />
-    <link href="http://img1.cache.netease.com/f2e/news/commend/collect/head~yzRBYNNdHlGv.css" rel="stylesheet" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     
@@ -29,17 +29,17 @@
                                         <div class="my-commend-body">
                                             <div class="figure">
                                                 <span runat="server" visible='<%#Eval("titleImage")!=""%>'>
-                                                      <a  title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>">
+                                                      <a  title="<%#Eval("title") %>" target="_blank" href="/Detail.aspx?id=<%#Eval("id") %>">
                                                     
                                                    <img class="figure-img"  alt="<%#HtmlHelper.SubStr(Eval("title").ToString(),16,false) %>" src="<%#ImageUtils.GetThumbImagePath(Eval("titleImage").ToString(),132,100,1) %>">
 
                                                 </a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><div class="figcaption">
                                                     <h2>
-                                                        <a title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>"><%#Eval("title") %></a>
+                                                        <a title="<%#Eval("title") %>" target="_blank" href="/Detail.aspx?id=<%#Eval("id") %>"><%#Eval("title") %></a>
                                                     </h2>
                                                     <p class="caption">
-                                                        我说你一个大老爷们欺负人家一个女孩子好意思的么？！
+                                                        <%#HtmlHelper.SubStr(Eval("content").ToString(),109,true) %>
                                                     </p>
                                                     <div class="intera">
                                                         <a title="推荐" data-action="ding" class="btn-commend btn-disable">

@@ -20,9 +20,9 @@
     <link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/f2e/news/commend/images/appicon.png" />
     <%-- <link href="/css/head3lBKyc6KkiYn.css" rel="stylesheet"/>
     <link href="/css/home.css" rel="stylesheet"/>--%>
+     <link href="http://img1.cache.netease.com/f2e/news/commend/collect/head~yzRBYNNdHlGv.css" rel="stylesheet" />
 
-
-    <script type='text/javascript' src="Js/jquery-1.6.1.min.js"></script>
+    <script type='text/javascript' src="/Js/jquery-1.6.1.min.js"></script>
 
     <script type='text/javascript'>
         $(function () {
@@ -37,22 +37,19 @@
             }
             href = window.decodeURI(href);
             $(".nav a[href=" + href + "]").parent().addClass("on").siblings().removeClass();
-            $("#example-one").organicTabs();
-
-            $("#searchButton").click(function () {
-                var keyWords = $.trim($("#keyWords").val());
-
-                if (keyWords == "") {
-
-                    alert("请输入搜索的关键词!");
-
-                } else {
-
-                    window.location.href = "Search.aspx?keyWords=" + keyWords;
-
-                }
-                return false;
+           
+            $(".loginOut").click(function () {
+                var url = "/ashx/User.ashx";
+                var data = { a: "out" };
+                $.post(url, data, function (data) {
+                    if (data == "1") {
+                        window.location.reload();
+                    } else {
+                        window.location.reload();
+                    }
+                });
             });
+            
         });
 
     </script>
@@ -84,7 +81,7 @@
                         </ul>
                         <a title="荐新闻首页" target="_self" href="/" class="backto">返回荐新闻</a>
                         <a title="返回列表页" href="/" id="ep-close" class="ep-close"></a>
-                        <div class="ep-sidetools ep-lefttools">
+                        <%--<div class="ep-sidetools ep-lefttools">
                             <a href="javascript:" data-action="navleft" class="ep-nav ep-nav-pc ep-nav-left"><i></i>
                                 <label>上一篇：</label><span id="ep-prev"></span></a>
                         </div>
@@ -104,50 +101,16 @@
                             </div>
                             <a href="javascript:" data-action="navright" class="ep-nav ep-nav-pc ep-nav-right"><i></i>
                                 <label>下一篇：</label><span id="ep-next"></span></a>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
-                <iframe class="iframe_hidden" src="http://news.163.com/special/f2e/commend_proxy.html"></iframe>
+               
             </div>
-
-            <!--<div class="navibar">
-                <div class="header_top  clearfix">
-                    <div class="con_left">
-                        <span class="add"><a onclick="javascript:window.external.AddFavorite('http://www.baidu.com','鄂尔多斯产权交易中心')" class="fn">收藏我们</a></span>
-                    </div>
-                    <div class="col_right">
-                        <span class="login" id="userinfo">
-                            <span class="head_img">
-                                <img height="20" border="0" src="images/top_user.gif" style="vertical-align: top">
-                            </span>
-                            <span>
-                                <asp:HyperLink Visible="false" ID="LoginName" runat="server">HyperLink</asp:HyperLink>你好，欢迎来到鄂尔多斯公共资源交易平台&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                <asp:Literal ID="NoLogin" Visible="false" runat="server">
-                                      
-                                     <a  href="Login.aspx"style="padding: 0 5px;">[登录]</a>或
-                                    <a href="Regist.aspx" onclick=";" style="padding: 0 5px;">[注册]</a>
-
-                                </asp:Literal>
-
-
-                            </span>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>-->
-
-
-
-
             <div id="content" style="width: auto;">
                 <div class="main-wrapper">
                     <div class="rightbar">
                         <div class="rightbar-caption">
-                            <%--<div id="weather" class="weather">
+                            <div id="weather" class="weather">
                                 <div class="clearfix">
                                     <a class="city" href="#">上海</a>
                                     <div class="weather-bg weather-7">
@@ -166,22 +129,24 @@
                                     <div class="weather-cityaz"><a class="weather-az-active" href="javascript:">热门</a><a href="javascript:">A</a><a href="javascript:">B</a><a href="javascript:">C</a><a href="javascript:">D</a><a href="javascript:">E</a><a href="javascript:">F</a><a href="javascript:">G</a><a href="javascript:">H</a><a href="javascript:">J</a><a href="javascript:">K</a><a href="javascript:">L</a><a href="javascript:">M</a><a href="javascript:">N</a><a href="javascript:">P</a><a href="javascript:">Q</a><a href="javascript:">R</a><a href="javascript:">S</a><a href="javascript:">T</a><a href="javascript:">W</a><a href="javascript:">X</a><a href="javascript:">Y</a><a href="javascript:">Z</a></div>
                                     <div class="weather-citylist"><a code="101010100" href="javascript:">北京</a><a code="101020100" href="javascript:">上海</a><a code="101290101" href="javascript:">昆明</a><a code="101210101" href="javascript:">杭州</a><a code="101280101" href="javascript:">广州</a><a code="101270101" href="javascript:">成都</a><a code="101110101" href="javascript:">西安</a><a code="101190101" href="javascript:">南京</a><a code="101280601" href="javascript:">深圳</a><a code="101040100" href="javascript:">重庆</a><a code="101250101" href="javascript:">长沙</a><a code="101070101" href="javascript:">沈阳</a><a code="101230201" href="javascript:">厦门</a><a code="101200101" href="javascript:">武汉</a><a code="101310101" href="javascript:">海口</a><a code="101130101" href="javascript:">乌鲁木齐</a><a code="101120201" href="javascript:">青岛</a><a code="101070201" href="javascript:">大连</a><a code="101050101" href="javascript:">哈尔滨</a><a code="101310201" href="javascript:">三亚</a><a code="101060101" href="javascript:">长春</a><a code="101300101" href="javascript:">南宁</a><a code="101260101" href="javascript:">贵阳</a><a code="101230101" href="javascript:">福州</a><a code="101180101" href="javascript:">郑州</a><a code="101120101" href="javascript:">济南</a><a code="101300501" href="javascript:">桂林</a><a code="101030100" href="javascript:">天津</a><a code="101100101" href="javascript:">太原</a><a code="101240101" href="javascript:">南昌</a><a code="101140101" href="javascript:">拉萨</a><a code="101150101" href="javascript:">西宁</a><a code="101340101" href="javascript:">台北</a></div>
                                 </div>
-                            </div>--%>
+                            </div>
 
                             <div id="user-rightbar-login" class="user-info">
                                 <div style="display: block;" class="user-main">
                                     <a class="avatar" href="/home/">
                                         <asp:Image ID="MyAvatar" runat="server" /></a>
                                     <div class="user-name">
-                                        <a href="/home/">封丘门户网</a>
+                                      <a href="/Home/"><%=user.userName %></a>
                                     </div>
                                     <div class="badge-group">
-                                        <a class="reason" href="/home/">
-                                            <span id="recNum">4</span>
-                                            推荐&nbsp;
-                    <span id="shareNum">2</span>
-                                            分享
-                                        </a>
+                                        <a href="" class="reason">
+                            <span id="recNum"><asp:Literal ID="DigCount" runat="server">20</asp:Literal></span>
+                            推荐&nbsp;
+                            </a> |
+                         <a href="javascript:void(0)" class="reason loginOut">
+                    
+                            退出
+                        </a>
                                     </div>
                                 </div>
                             </div>

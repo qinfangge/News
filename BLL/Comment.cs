@@ -187,9 +187,27 @@ namespace CMS.BLL
 		//}
 
 		#endregion  BasicMethod
-		#region  ExtensionMethod
+        #region  ExtensionMethod
+        /// <summary>
+        /// 分页获取数据列表 for sql 2000
+        /// </summary>
+        public DataSet GetListByPage(string condition, string order, int pageSize, int currentPage, bool isGeneral)
+        {
+            return dal.GetListByPage(condition, order, pageSize, currentPage, isGeneral);
+        }
 
-		#endregion  ExtensionMethod
+        /// <summary>
+        /// 获取前几条数据
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <param name="orderby"></param>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public DataSet GetTopList(string strWhere, string orderby, int number)
+        {
+            return dal.GetTopList(strWhere, orderby, number);
+        }
+        #endregion  ExtensionMethod
 	}
 }
 

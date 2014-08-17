@@ -116,7 +116,7 @@
                 //后台处理的页面
                 'uploader': '/ashx/UploadHandler.ashx?a=add',
                 //按钮显示的文字
-                'buttonText': '上传图片',
+                'buttonText': '上传头像',
                 //显示的高度和宽度，默认 height 30；width 120
                 //'height': 15,
                 //'width': 80,

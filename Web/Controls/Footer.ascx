@@ -25,6 +25,6 @@
             </div>
         </div>
     </div>
-    <script src="js/ntes_jslib_1.js"></script>
+   <%-- <script src="js/ntes_jslib_1.js"></script>
     <script src="js/ne.js"></script>
-    <script src="js/footegOJpqcpEXsL.js" charset="utf-8"></script>
+    <script src="js/footegOJpqcpEXsL.js" charset="utf-8"></script>--%>

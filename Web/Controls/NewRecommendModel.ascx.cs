@@ -11,9 +11,8 @@ namespace CMS.Web.Controls
 {
     public partial class NewRecommendModel : System.Web.UI.UserControl
     {
-        public int CategoryId {set;get;}
-        public  string NewsModelName { set; get; }
-        private string allCategory = "";
+      
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             BindData();
@@ -22,34 +21,36 @@ namespace CMS.Web.Controls
         #region 绑定数据
         public void BindData()
         {
-            ModelName.Text=NewsModelName;
+          
             CMS.BLL.News bll = new CMS.BLL.News();
             DataSet ds = new DataSet();
             StringBuilder strWhere = new StringBuilder("1=1");
-            getAllCategory();
-            strWhere.AppendFormat(" and category in ({0}) ", allCategory);
             
-            string orderby = "id desc ";
-           // ds = bll.GetListByPage(strWhere.ToString(), orderby, 0, 6);
+            strWhere.AppendFormat(" and id in ({0}) ", getNewsIds());
+            
+            string orderby = "";
+            //ds = bll.GetListByPage(strWhere.ToString(), orderby, 0, 6);
             ds=bll.Cache(30).GetTopList(strWhere.ToString(), orderby, 6, 30);
             Repeater1.DataSource = ds;
             Repeater1.DataBind();
         }
         #endregion
 
-        #region 获得当前栏目下的所有栏目
-        private void getAllCategory()
+        #region 获得刚刚推荐的新闻
+        private string  getNewsIds()
         {
+            
+            BLL.Comment bll = new BLL.Comment();
+            DataSet ds=bll.GetTopList("", "", 10);
 
-            BLL.Category bll = new BLL.Category();
-            DataTable table = bll.GetChildren(CategoryId);
-            allCategory += CategoryId.ToString() + ",";
+            DataTable table = ds.Tables[0];
+            string allIds ="";
             foreach (DataRow row in table.Rows)
             {
-                allCategory += row["id"].ToString() + ",";
+                allIds += row["newsId"].ToString() + ",";
             }
 
-            allCategory = allCategory.TrimEnd(new char[] { ',' });
+            return allIds = allIds.TrimEnd(new char[] { ',' });
         }
 
         #endregion
