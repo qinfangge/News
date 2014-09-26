@@ -13,7 +13,8 @@ namespace CMS.Web
     {
         private int CategoryId = 19;
         protected CMS.Model.User user = null;
-
+        private CMS.BLL.Comment commentBll = new CMS.BLL.Comment();
+        static CMS.BLL.News bll = new CMS.BLL.News();
         protected void Page_Load(object sender, EventArgs e)
         {
             InitSEO();//初始化SEO
@@ -32,11 +33,15 @@ namespace CMS.Web
                 LoginPanel.Visible = false;
                 LoginInPanel.Visible = true;
                 //CMS.BLL.Comment commentBll = new BLL.Comment();
-               // commentBll.GetRecordCount("userId=
+                // commentBll.GetRecordCount("userId=
                 //DigCount.Text = 20;
 
-               
+
                 InitAvatar();
+
+                RecommendCount.Text = bll.GetMyRecommendRecordCount(user.id).ToString();
+                
+
 
             }
             else
@@ -44,7 +49,7 @@ namespace CMS.Web
                 LoginPanel.Visible = true;
                 LoginInPanel.Visible = false;
 
-               
+
             }
             #endregion
 
@@ -69,13 +74,13 @@ namespace CMS.Web
 
                 strWhere = new StringBuilder("category in " + allCategory);
             }
-            
 
-           
+
+
             int pageSize = Pager1.PageSize;
             int startIndex = (currentPage - 1) * pageSize + 1;
             int endIndex = currentPage * pageSize;
-            CMS.BLL.News bll = new CMS.BLL.News();
+            
             // ds = bll.GetListByPage(strWhere.ToString(), orderBy, startIndex, endIndex);
             ds = bll.GetListByPage(strWhere.ToString(), orderBy, pageSize, currentPage, true);
             Pager1.RecordCount = bll.GetRecordCount(strWhere.ToString());
@@ -83,6 +88,8 @@ namespace CMS.Web
 
             NewsRepeater.DataSource = ds;
             NewsRepeater.DataBind();
+
+           
 
             #endregion
 
@@ -148,9 +155,34 @@ namespace CMS.Web
 
         }
         #endregion
+
+        #region 获得评论数目
+        protected int GetCommentCount(int id)
+        {
+            int count = 0;
+            string strWhere = "newsId=" + id;
+            count = commentBll.GetRecordCount("newsId=" + id);
+            return count;
+        }
+        #endregion
+
+        #region 获得文章的属性
+
+
+        public static string GetAttribute(int id)
+        {
+            string attr = "";
+            List<string> list=bll.GetAttribute(id);
+            if (list.Count > 0)
+            {
+                attr = list[0];
+            }
+            return attr;
+        }
+        #endregion
         protected void NewsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            
+
         }
 
         protected void NewsRepeater_ItemCommand1(object source, RepeaterCommandEventArgs e)

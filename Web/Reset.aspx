@@ -1,4 +1,4 @@
-﻿<%@ Page Title="用户注册" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reset.aspx.cs" Inherits="CMS.Web.Reset" %>
+﻿<%@ Page Title="找回密码" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reset.aspx.cs" Inherits="CMS.Web.Reset" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
     <link type="text/css" rel="stylesheet" href="css/register.css"/>
@@ -33,26 +33,16 @@
                     <dd class="box ip">
                         <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
                     </dd>
-                    <dd class="tp">
-                        <div id="regname_info" class="txt-info-mouseout">
-                            *  	
-                                 6~12个字符，包括字母、数字、下划线，以字母开头，字母或数字结尾
-                        </div>
-                    </dd>
+                  
                 </dl>
                 <dl class="cc">
                     <dt>
                         <label for="regname0">
                             邮箱：</label></dt>
                     <dd class="box ip">
-                        <asp:TextBox ID="Password" runat="server" OnTextChanged="Password_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="Email" runat="server" ></asp:TextBox>
                     </dd>
-                    <dd class="tp">
-                        <div id="regname_info0" class="txt-info-mouseout">
-                            *  	
-                                  6~16个字符，包括字母、数字、特殊符号，区分大小写
-                        </div>
-                    </dd>
+                   
                 </dl>
               
                 <dl class="cc">

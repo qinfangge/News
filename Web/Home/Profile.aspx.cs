@@ -9,18 +9,25 @@ namespace CMS.Web.Home
 {
     public partial class Profile : System.Web.UI.Page
     {
+        protected CMS.Model.User user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Avatar.Value = "1";
+            user=Session["user"] as CMS.Model.User;
+            if (!IsPostBack)
+            {
+                CMS.BLL.Avatar bll = new BLL.Avatar();
+                CMS.Model.Avatar avatar = bll.GetAvatarByUserID(user.id);
+                this.Avatar.Value = avatar.id.ToString();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CMS.Model.User user = new Model.User();
-            user.id = 1;
-            user.userName = "qinfangge";
-            user.email = "fqmhw@qq.clm";
-            user.password = "132";
+            //CMS.Model.User user = new Model.User();
+            //user.id = 1;
+            //user.userName = "qinfangge";
+            //user.email = "fqmhw@qq.clm";
+            //user.password = "132";
 
             string userName=NickName.Text.Trim();
             string password = Password.Text.Trim();

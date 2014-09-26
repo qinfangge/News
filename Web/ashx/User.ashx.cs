@@ -35,8 +35,8 @@ namespace CMS.Web.ashx
             string userName = context.Request["userName"].ToString();
             string password = context.Request["password"].ToString();
             CMS.BLL.User bll = new BLL.User();
-            //string strWhere = string.Format("userName='{0}' and password='{1}'", userName, password);
-            string strWhere = "id=11";
+            string strWhere = string.Format("userName='{0}' and password='{1}'", userName, password);
+           // string strWhere = "id=11";
             List<CMS.Model.User> list = bll.GetModelList(strWhere);
             if (list.Count > 0)
             {

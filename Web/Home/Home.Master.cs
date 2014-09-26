@@ -40,6 +40,9 @@ namespace CMS.Web.Home
             InitMainNav();//导航
             InitContact();//网站尾部
 
+            CMS.BLL.News newsBll = new BLL.News();
+            RecommendCount.Text= newsBll.GetMyRecommendRecordCount(user.id).ToString();
+
            
         }
 
@@ -59,11 +62,12 @@ namespace CMS.Web.Home
                 id = model.id;
 
             }
-
             url = width + "|" + height + "|" + id;
             url = Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(url)).Replace("+", "%2B");
             url = url + ".jpg";
             MyAvatar.ImageUrl = "/Avatar/" + url;
+
+            
 
         }
         #endregion

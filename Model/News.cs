@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/2/20 14:09:46   N/A    初版
+* V0.01  2014/8/24 13:18:02   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -40,6 +40,7 @@ namespace CMS.Model
 		private bool _isdel= false;
 		private int? _hit=0;
 		private bool _isswitch= false;
+		private int? _recommendcount=0;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -151,6 +152,14 @@ namespace CMS.Model
 		{
 			set{ _isswitch=value;}
 			get{return _isswitch;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? recommendCount
+		{
+			set{ _recommendcount=value;}
+			get{return _recommendcount;}
 		}
 		#endregion Model
 

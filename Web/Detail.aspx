@@ -1,24 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detail.aspx.cs" Inherits="CMS.Web.Detail" %>
 
 <%@ Register Src="Controls/CurrentPosition.ascx" TagName="CurrentPosition" TagPrefix="uc1" %>
+<%@ Register Src="Controls/Recommend.ascx" TagName="recommend" TagPrefix="uc2" %>
+<%@ Register Src="Controls/Rank.ascx" TagName="rank" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
     <link href="css/detail.css" rel="stylesheet" />
 
 
     <link rel="stylesheet" href="Js/libs/artDialog/css/ui-dialog.css" />
-    <script src="Js/libs/artDialog/dist/dialog-min.js"></script>
+    <script src="Js/libs/artDialog/dist/dialog.js" charset="gbk"></script>
+
     <script>
         var newsId=<%=this.strid%>;
-       
+        var d=null;
+
         $(document).ready(function () {
            
            
-          
-            var d = dialog({
+             d= dialog({
                 title: '提示',
-                content: ''
-            });
+                content: '1111',
+                cancelDisplay: false,
+                cancel: function () {
+                   // alert('不许关闭');
+                    this.close();
+                    return false;
+                }
 
+            });
+         
             //账号登录提示
 
             $(".tie-textbox").focus(function()
@@ -261,31 +271,11 @@
                         <uc1:CurrentPosition ID="CurrentPosition1" runat="server" ArticleTableName="Default" />
                         <div id="epContentRight" class="ep-content-side">
                             <div class="ep-content-side-inner" style="top: 0px;">
-                                <div class="ep-title-2 clearfix">
-                                    <h2 class="title">相关推荐</h2>
-                                </div>
-                                <div>
-                                    <ul class="mod-f12list">
-                                        <li><a target="_self" srctype="101" docid="A1RM4MNG90014MNH" title="娱圈还有爱情童话 盘点小贝夫妇15年情路" href="/#detail/99/A1RM4MNG90014MNH?101">娱圈还有爱情童话 盘点小贝夫妇15年情路</a></li>
-                                        <li><a target="_self" srctype="101" docid="A25I08O9900108OA" title="贝克汉姆夫妇结婚15年 贝嫂收夫13枚婚戒" href="/#detail/99/A25I08O9900108OA?101">贝克汉姆夫妇结婚15年 贝嫂收夫13枚婚戒</a></li>
-                                        <li><a target="_self" srctype="101" docid="A2PNEH7N9001EH7O" title="小贝大儿子脸上“超杀女”" href="/#detail/99/A2PNEH7N9001EH7O?101">小贝大儿子脸上“超杀女”</a></li>
-                                        <li><a target="_self" srctype="101" docid="A2SL9C8C90019C8D" title="小贝长子情窦初开！被曝约会大两岁超杀女莫瑞兹" href="/#detail/99/A2SL9C8C90019C8D?101">小贝长子情窦初开！被曝约会大两岁超杀女莫瑞兹</a></li>
-                                        <li><a target="_self" srctype="101" docid="A2NFALGI00254UF3" title="小贝15岁长子恋17岁女星 已交往三个月" href="/#detail/99/A2NFALGI00254UF3?101">小贝15岁长子恋17岁女星 已交往三个月</a></li>
-                                    </ul>
-                                </div>
+                                 <uc2:recommend ID="Recommend1" NewsModelName="本站推荐"  runat="server" />
+
+                           
                                 <span class="blank6"></span>
-                                <div class="ep-title-2 clearfix">
-                                    <h2 class="title">猜你喜欢</h2>
-                                </div>
-                                <div>
-                                    <ul class="mod-f12list">
-                                        <li><a target="_self" srctype="102" docid="A31QNTR100254TI5" title="韩彩英1亿婚礼嫁豪门 曝大办过亿婚礼女星/图" href="/#detail/99/A31QNTR100254TI5?102">韩彩英1亿婚礼嫁豪门 曝大办过亿婚礼女星/图</a></li>
-                                        <li><a target="_self" srctype="102" docid="A310T28F9001T28G" title="李小璐整容失败巩俐胸下垂 女星装嫩大出丑/图" href="/#detail/99/A310T28F9001T28G?102">李小璐整容失败巩俐胸下垂 女星装嫩大出丑/图</a></li>
-                                        <li><a target="_self" srctype="102" docid="A31R7EQ590017EQ6" title="全智贤金秀贤未PS照曝光 求给女神男神打光" href="/#detail/99/A31R7EQ590017EQ6?102">全智贤金秀贤未PS照曝光 求给女神男神打光</a></li>
-                                        <li><a target="_self" srctype="102" docid="A31IUPFR00031H2L" title="杨千嬅黑脸训儿子" href="/#detail/99/A31IUPFR00031H2L?102">杨千嬅黑脸训儿子</a></li>
-                                        <li><a target="_self" srctype="102" docid="A31D8TQ900964K7C" title="8月8日爸爸节 盘点娱乐圈的绝顶好爸爸" href="/#detail/99/A31D8TQ900964K7C?102">8月8日爸爸节 盘点娱乐圈的绝顶好爸爸</a></li>
-                                    </ul>
-                                </div>
+                                 <uc3:rank runat="server" NewsModelName="点击排行榜" ID="Rank" />
                                 <span class="blank20"></span>
                                 <div class="mod-ins">
                                     <span class="blank9"></span>
@@ -360,7 +350,7 @@
                                     <div class="left">
                                         <asp:Literal ID="AddTime" runat="server"></asp:Literal>&#12288;来源:
                                         <asp:Literal ID="Source" runat="server"></asp:Literal>&#12288;点击量：<asp:Literal ID="Hits" runat="server"></asp:Literal>
-                                        &#12288;<a title="点击查看跟贴" href="http://comment.ent.163.com/ent2_bbs/A2U8QTTC00031H2L.html#articlejiannewscomment" class="cDRed js-tielink" target="_blank">有<span class="js-totalcount"><asp:Literal ID="CommentCount" runat="server"></asp:Literal></span>人参与</a>
+                                        &#12288;<a title="点击查看跟贴" href="#tiePostBox" class="cDRed js-tielink" >有<span class="js-totalcount"><asp:Literal ID="CommentCount" runat="server"></asp:Literal></span>人参与</a>
                                     </div>
                                     <div class="ep-icon-tie"><a data-action="tieanchor" class="js-tieachor" target="_self" href="#tiePostBox" title="快速发贴"></a></div>
                                 </div>

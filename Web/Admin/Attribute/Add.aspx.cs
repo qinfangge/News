@@ -25,32 +25,29 @@ namespace CMS.Web.Admin.Attribute
 		{
 			
 			string strErr="";
-			if(!PageValidate.IsNumber(txtid.Text))
-			{
-				strErr+="id格式错误！\\n";	
-			}
-			if(this.txtname.Text.Trim().Length==0)
-			{
-				strErr+="name不能为空！\\n";	
-			}
-			if(this.txtstyle.Text.Trim().Length==0)
-			{
-				strErr+="style不能为空！\\n";	
-			}
+            if (this.txtname.Text.Trim().Length == 0)
+            {
+                strErr += "属性名称不能为空！\\n";
+            }
+            if (this.txtcssClass.Text.Trim().Length == 0)
+            {
+                strErr += "css类名不能为空！\\n";
+            }
 
 			if(strErr!="")
 			{
 				MessageBoxTip.Alert(this,strErr);
 				return;
 			}
-			int id=int.Parse(this.txtid.Text);
+                    
+			
 			string name=this.txtname.Text;
-			string style=this.txtstyle.Text;
+            string style = this.txtcssClass.Text;
 
 			CMS.Model.Attribute model=new CMS.Model.Attribute();
-			model.id=id;
+			
 			model.name=name;
-			model.style=style;
+			model.cssClass=style;
 
 			CMS.BLL.Attribute bll=new CMS.BLL.Attribute();
 			bll.Add(model);

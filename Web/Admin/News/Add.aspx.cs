@@ -20,13 +20,30 @@ namespace CMS.Web.Admin.News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                       
+            if (!IsPostBack)
+            {
+                BindAttribute();
+            }
+
+
         }
 
-      
+        public void BindAttribute()
+        {
 
-        		protected void btnSave_Click(object sender, EventArgs e)
+            #region 初始化文章属性
+            CMS.BLL.Attribute groupBLL = new CMS.BLL.Attribute();
+            //★★与表的数据绑定★★
+            this.ArticleAttribute.DataSource = groupBLL.GetAllList();//设置数据源
+            ArticleAttribute.DataTextField = "name";//设置所要读取的数据表里的列名
+            ArticleAttribute.DataValueField = "id";
+            ArticleAttribute.DataBind();//数据绑定
+            #endregion
+        }
+
+
+
+        protected void btnSave_Click(object sender, EventArgs e)
 		{
 			
 			string strErr="";
@@ -85,8 +102,31 @@ namespace CMS.Web.Admin.News
             model.isSwitch = isSwitch;
 
 			CMS.BLL.News bll=new CMS.BLL.News();
-			bll.Add(model);
-			MessageBoxTip.AlertAndRedirect(this,"保存成功！","Add.aspx");
+            int newsID=bll.Add(model);
+            if (newsID>0)
+            {
+               
+                System.Collections.Generic.List<int> attributes = new System.Collections.Generic.List<int>();
+                foreach(var item in ArticleAttribute.Items)
+                {
+                    var item2 = item as ListItem;
+                    if (item2.Selected)
+                    {
+                        attributes.Add(int.Parse(item2.Value));
+                    }
+                }
+               
+                if(attributes.Count>0)
+                {
+                CMS.BLL.News_Attribute attributeBll = new BLL.News_Attribute();
+                attributeBll.Add(newsID, attributes);
+                }
+                MessageBoxTip.AlertAndRedirect(this, "保存成功！", "Add.aspx");
+            }
+            else
+            {
+
+            }
 
 		}
 

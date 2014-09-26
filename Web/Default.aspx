@@ -7,10 +7,27 @@
 <%@ Register src="Controls/NewRecommendModel.ascx" tagname="NewRecommendModel" tagprefix="uc3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
+
+    
+    <link rel="stylesheet" href="Js/libs/artDialog/css/ui-dialog.css" />
+    <script src="Js/libs/artDialog/dist/dialog.js" charset="gbk"></script>
     <link href="css/base/pager.css" rel="stylesheet"/>
     <script type="text/javascript">
 
         $(document).ready(function () {
+
+            d = dialog({
+                title: '提示',
+                content: '1111',
+                cancelDisplay: false,
+                cancel: function () {
+                    // alert('不许关闭');
+                    this.close();
+                    return false;
+                }
+
+            });
+
 
             $(".loginOut").click(function () {
                 var url = "/ashx/User.ashx";
@@ -23,17 +40,79 @@
                     }
                 });
             });
+
+
+            $(".btn-commend").bind("click",function () {
+                var id = $(this).attr("id");
+                var url = "/ashx/Recommend.ashx";
+                var data = { id: id };
+                var current = $(this);
+                var count = Number($(this).find(".btn-count").text())+1;
+
+                $.post(url, data, function (data) {
+                    if (data == "1") {
+                       
+                       current.addClass(" btn-disable");
+                       current.find(".btn-count").text(count);
+                       current.unbind("click");
+                       return;
+                    }
+
+                    
+                    if(data=="0"){
+                        d.content("网络繁忙，请稍后重试！").show();
+                        return;
+                    }
+
+                  
+                    d.content(data).show();
+                    
+
+                });
+            });
+
+            
+
             $(".btn-submit").click(function () {
                 var url = "/ashx/User.ashx";
-                var userName = $.trim($("input[name=password]").val());
+                var userName = $.trim($("input[name=username]").val());
                 var password = $.trim($("input[name=password]").val());
 
+               
+                var followUserName = document.getElementById('username');
+                var followPassword = document.getElementById('password');
+                var loginTip = dialog({
+                    align: 'left',
+                    quickClose: true,// 点击空白处快速关闭
+                  
+                });
+
+                if (userName == "") {
+                    loginTip.content("用户名不能为空！");
+                    loginTip.show(followUserName);
+                    return;
+                }
+
+                if (password == "") {
+
+                    loginTip.content("密码不能为空！");
+                    loginTip.show(followPassword);
+                    return;
+                }
+
+
+                
                 var data = { userName: userName, password: password, a: "in" };
                 $.post(url, data, function (data) {
                     if (data == "1") {
                         window.location.reload();
                     } else {
-                        $(".ntes-loginframe-tips").css("top","9px").text("用户名或密码错误！").show();
+                       
+                        loginTip.content("用户名或密码错误！");
+                        loginTip.show(followUserName);
+
+                      //  d.content("用户名或密码错误！").show();
+                        //$(".ntes-loginframe-tips").css("top","9px").text("用户名或密码错误！").show();
                        // d.content("网络繁忙，请稍后重试！").show();
                     }
                 });
@@ -74,10 +153,10 @@
               <%--  <form autocomplete="off">--%><asp:Panel ID="LoginPanel" runat="server">
                     <div class="ntes-loginframe-tips">用户名密码错误！</div>
                     <div class="form-group">
-                        <input value="zhongpaiwang@126.com" name="username" placeholder="封丘通行证/邮箱登陆" type="text">
+                        <input id="username" value="" name="username" placeholder="封丘通行证/邮箱登陆" type="text">
                     </div>
                     <div class="form-group">
-                        <input name="password" placeholder="密码" type="password">
+                        <input name="password" id="password" placeholder="密码" type="password"/>
                     </div>
                     <div class="form-group" style="display: none;">
                         <input name="autologin" class="ntes-loginframe-checkbox" type="checkbox">
@@ -110,7 +189,7 @@
                     </div>
                     <div class="badge-group">
                         <a href="/Home/" class="reason">
-                            <span id="recNum"><asp:Literal ID="DigCount" runat="server">20</asp:Literal></span>
+                            <span id="recNum"><asp:Literal ID="RecommendCount" runat="server"></asp:Literal></span>
                             推荐&nbsp;
                             </a> |
                          <a href="javascript:void(0)" class="reason loginOut">
@@ -137,7 +216,7 @@
                     <ItemTemplate>
 
                         <div style="display: inline-block;" class="card  <%#Eval("titleImage")!=""?"card-pic":"card-nopic"%> card-visible ">
-                            <i class="card-flag card-flag-1"></i>
+                            <i class="card-flag <%#GetAttribute(int.Parse(Eval("id").ToString())) %>"></i>
                             <div class="cardtitle pictitle">
 
                                 <span class="bigpic" runat="server" visible='<%#Eval("titleImage")!=""%>'><a title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>">
@@ -146,7 +225,7 @@
                                     <img alt="<%#HtmlHelper.SubStr(Eval("title").ToString(),16,false) %>" src="<%#ImageUtils.GetThumbImagePath(Eval("titleImage").ToString(),132,100,1) %>">
                                 </a></span>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>
                                     <a title="<%#Eval("title") %>" target="_blank" href="Detail.aspx?id=<%#Eval("id") %>">
                                         <div class="title-mask"></div>
                                         <span><%#Eval("title") %></span>
@@ -158,12 +237,12 @@
                             </div>
                             <div class="intera" docid="A31NPSIG9001PSIH">
                                 <a class="btn-close" data-hint="不感兴趣" data-action="not_like"></a>
-                                <a class="btn-commend" data-action="ding" title="推荐">
+                                <a class="btn-commend" id="<%#Eval("id") %>" data-action="ding" title="推荐">
                                     <i class="btn-card"></i>
-                                    <span class="btn-count">1</span>
-                                </a><a class="newcommend" title="跟贴评论" href="http://comment.news.163.com/comment_bbs/A31NPSIG9001PSIH.html#mainjnewscomment">
+                                    <span class="btn-count"><%#Eval("recommendCount") %></span>
+                                </a><a class="newcommend" title="跟贴评论" href="/Detail.aspx?id=<%#Eval("id") %>#tiePostBox">
                                     <i class="btn-card"></i>
-                                    <span class="tiecount">1</span>
+                                    <span class="tiecount"><%#GetCommentCount(int.Parse(Eval("id").ToString())) %></span>
                                 </a>
                                <%-- <a data-action="share" class="btn-share">
                                     <i class="btn-card"></i>

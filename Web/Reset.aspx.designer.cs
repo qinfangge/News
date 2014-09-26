@@ -22,13 +22,13 @@ namespace CMS.Web {
         protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
-        /// Password 控件。
+        /// Email 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
         /// VCode 控件。

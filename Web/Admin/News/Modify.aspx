@@ -82,6 +82,14 @@
                     <asp:CheckBox ID="IsSwitch" runat="server"  />
                 </td>
             </tr>
+
+              <tr>
+                <td>文章属性
+	：</td>
+                <td class="checkBoxWrapper">
+                    <asp:CheckBoxList RepeatDirection="Horizontal" RepeatLayout="Flow" ID="ArticleAttribute"  runat="server"  />
+                </td>
+            </tr>
                     <tr>
                         <td >内容
 	：</td>

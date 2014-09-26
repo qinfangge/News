@@ -1,12 +1,12 @@
 ﻿/**  版本信息模板在安装目录下，可自行修改。
-* Attribute.cs
+* MyRecommend.cs
 *
 * 功 能： N/A
-* 类 名： Attribute
+* 类 名： MyRecommend
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/8/31 11:58:19   N/A    初版
+* V0.01  2014/8/24 13:51:30   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -18,21 +18,22 @@ using System;
 namespace CMS.Model
 {
 	/// <summary>
-	/// Attribute:实体类(属性说明自动提取数据库字段的描述信息)
+	/// MyRecommend:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class Attribute
+	public partial class MyRecommend
 	{
-		public Attribute()
+		public MyRecommend()
 		{}
 		#region Model
-		private int? _id;
-		private string _name;
-		private string _cssclass;
+		private int _id;
+		private int _newsid;
+		private int? _userid;
+		private DateTime? _addtime;
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? id
+		public int id
 		{
 			set{ _id=value;}
 			get{return _id;}
@@ -40,18 +41,26 @@ namespace CMS.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string name
+		public int newsID
 		{
-			set{ _name=value;}
-			get{return _name;}
+			set{ _newsid=value;}
+			get{return _newsid;}
 		}
 		/// <summary>
 		/// 
 		/// </summary>
-		public string cssClass
+		public int? userID
 		{
-			set{ _cssclass=value;}
-			get{return _cssclass;}
+			set{ _userid=value;}
+			get{return _userid;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public DateTime? addTime
+		{
+			set{ _addtime=value;}
+			get{return _addtime;}
 		}
 		#endregion Model
 

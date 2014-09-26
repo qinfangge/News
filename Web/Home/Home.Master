@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="badge-group">
                                         <a href="" class="reason">
-                            <span id="recNum"><asp:Literal ID="DigCount" runat="server">20</asp:Literal></span>
+                            <span id="recNum"><asp:Literal ID="RecommendCount" runat="server"></asp:Literal></span>
                             推荐&nbsp;
                             </a> |
                          <a href="javascript:void(0)" class="reason loginOut">

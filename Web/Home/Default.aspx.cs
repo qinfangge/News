@@ -11,14 +11,15 @@ namespace CMS.Web.Home
 {
     public partial class Default : System.Web.UI.Page
     {
-        private int CategoryId = 19;
-        private string allCategory = "";
+        
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitSEO();//初始化SEO
 
-            StringBuilder strWhere = new StringBuilder("recommend=1");
+            CMS.Model.User user = Session["user"] as CMS.Model.User;
+
+            StringBuilder strWhere = new StringBuilder("userId="+user.id);
             string orderBy = "addTime desc";
             int currentPage = 1;
 
@@ -30,13 +31,7 @@ namespace CMS.Web.Home
             DataSet ds = new DataSet();
             #region 新闻中心
 
-            if (!string.IsNullOrEmpty(Request["category"]))
-            {
-                CategoryId = int.Parse(Request["category"].ToString());
-                string allCategory = this.getAllCategory(CategoryId);
-
-                strWhere = new StringBuilder("category in " + allCategory);
-            }
+          
             
 
            
@@ -45,8 +40,8 @@ namespace CMS.Web.Home
             int endIndex = currentPage * pageSize;
             CMS.BLL.News bll = new CMS.BLL.News();
             // ds = bll.GetListByPage(strWhere.ToString(), orderBy, startIndex, endIndex);
-            ds = bll.GetListByPage(strWhere.ToString(), orderBy, pageSize, currentPage, true);
-            Pager1.RecordCount = bll.GetRecordCount(strWhere.ToString());
+            ds = bll.GetMyRecommendByPage(strWhere.ToString(), orderBy, pageSize, currentPage);
+            Pager1.RecordCount = bll.GetMyRecommendRecordCount(user.id);
 
 
             NewsRepeater.DataSource = ds;
@@ -78,16 +73,7 @@ namespace CMS.Web.Home
         private void InitSEO()
         {
 
-            CMS.Web.Admin.Config.Config config = new CMS.Web.Admin.Config.Config();
-            CMS.Model.Config SeoConfig = config.ReadConfig();
-            Page.Title = SeoConfig.SiteName;
-            Literal Keywords = this.Master.FindControl("SEOKeywords") as Literal;
-            Literal Description = this.Master.FindControl("SEODescription") as Literal;
-            Keywords.Text = string.Format(@"<meta name=""keyWords"" content=""{0}"" />", tk.tingyuxuan.utils.HtmlHelper.SubStr(SeoConfig.KeyWords, 80, true));
-
-            Description.Text = string.Format(@"<meta name=""description"" content=""{0}"" />", tk.tingyuxuan.utils.HtmlHelper.SubStr(SeoConfig.Description, 80, true));
-            Keywords.Text = "\r\n" + Keywords.Text + "\r\n";
-            Description.Text += "\r\n";
+           
 
         }
         #endregion

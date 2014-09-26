@@ -139,7 +139,9 @@
     <Compile Include="GuestBook.cs" />
     <Compile Include="Investment.cs" />
     <Compile Include="MainNav.cs" />
+    <Compile Include="MyRecommend.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="News_Attribute.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeGroup.cs" />
     <Compile Include="Notice.cs" />

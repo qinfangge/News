@@ -24,7 +24,7 @@
                                     <div docid="A37DTUHL9001TUHM" data-id="166182" class="my-commend-item">
                                         <span data-hint="不感兴趣" action="not_like" class="btn-close"></span>
                                         <div class="my-commend-header">
-                                            <p>推荐于：<span class="time">16:17</span></p>
+                                            <p>推荐于：<span class="time"><%#Eval("addTime") %></span></p>
                                         </div>
                                         <div class="my-commend-body">
                                             <div class="figure">

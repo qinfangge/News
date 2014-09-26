@@ -27,18 +27,26 @@ namespace CMS.Web.Admin.Attribute
                 BindData();
             }
         }
-        
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            string url = this.Request.FilePath + "?";
+
+            if (!string.IsNullOrEmpty(txtKeyword.Text))
+            {
+                url += "keywords=" + txtKeyword.Text;
+            }
+
+            Response.Redirect(url, true);
+
         }
-        
+
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             string idlist = GetSelIDlist();
-            if (idlist.Trim().Length == 0) 
+            if (idlist.Trim().Length == 0)
                 return;
-            #warning 代码生成警告：多主键情况无法生成批量删除，请手工修改代码. //bll.DeleteList(idlist);
+            bll.DeleteList(idlist);
             BindData();
         }
         
@@ -62,14 +70,34 @@ namespace CMS.Web.Admin.Attribute
             //}
             #endregion
 
+            if (!string.IsNullOrEmpty(Request["keyWords"]))
+            {
+
+                txtKeyword.Text = Request["keyWords"].ToString();
+            }
+
+
+
             DataSet ds = new DataSet();
-            StringBuilder strWhere = new StringBuilder();
+            StringBuilder strWhere = new StringBuilder("1=1");
             if (txtKeyword.Text.Trim() != "")
             {      
                 #warning 代码生成警告：请修改 keywordField 为需要匹配查询的真实字段名称
-                //strWhere.AppendFormat("keywordField like '%{0}%'", txtKeyword.Text.Trim());
-            }            
-            ds = bll.GetList(strWhere.ToString());            
+                strWhere.AppendFormat(" and name like '%{0}%'", txtKeyword.Text.Trim());
+            }
+            string orderBy = "id desc";
+            int currentPage = 1;
+            if (!string.IsNullOrEmpty(Request["page"]))
+            {
+                currentPage = int.Parse(Request["page"].ToString());
+            }
+
+            int pageSize = Pager1.PageSize;
+            int startIndex = (currentPage - 1) * pageSize + 1;
+            int endIndex = currentPage * pageSize;
+            //ds = bll.GetListByPage(strWhere.ToString(), orderBy, startIndex, endIndex);
+            ds = bll.GetListByPage(strWhere.ToString(), orderBy, pageSize, currentPage, true);
+            Pager1.RecordCount = bll.GetRecordCount(strWhere.ToString());
             gridView.DataSource = ds;
             gridView.DataBind();
         }

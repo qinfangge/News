@@ -167,13 +167,13 @@ namespace CMS.Web
                 var item = list[i];
                 string commentHtml = @"<div class='tie-floorInner'>                
                                             <span class='tie-floor-author layerUserName'>
-                                                {0}网易河北省石家庄市手机网友 [{1}颦儿2010] 的原贴：</span>
+                                                {0}网易河北省石家庄市手机网友 [{1}]的原贴：</span>
                                                 <span class='tie-floor-index'>{2}</span>            
                                          </div>          
                                         <p class='tie-floor-content layerFontColor'>{3}</p>";
                 CMS.Model.Comment comment = item as CMS.Model.Comment;
 
-                commentHtml = string.Format(commentHtml, GetAddress(comment.ip), "王业坤", i+1, comment.content);
+                commentHtml = string.Format(commentHtml, GetAddress(comment.ip), GetUserName(comment.userId.Value), i + 1, comment.content);
 
                 html += commentHtml;
                 html = string.Format(commentStartHtml + "{0}" + commentEndHtml, html);

@@ -507,6 +507,8 @@
     <Content Include="Controls\NoticeModel.ascx" />
     <Content Include="Controls\SinglePageModel.ascx" />
     <Content Include="Controls\NewRecommendModel.ascx" />
+    <Content Include="Controls\Recommend.ascx" />
+    <Content Include="Controls\Rank.ascx" />
     <Content Include="Css\base\article.css" />
     <Content Include="Css\base\contact.css" />
     <Content Include="Css\base\footer.css" />
@@ -1039,6 +1041,9 @@
     <Compile Include="ashx\User.ashx.cs">
       <DependentUpon>User.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\Recommend.ashx.cs">
+      <DependentUpon>Recommend.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Contact.ascx.cs">
       <DependentUpon>Contact.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1136,6 +1141,20 @@
     </Compile>
     <Compile Include="Controls\NewRecommendModel.ascx.designer.cs">
       <DependentUpon>NewRecommendModel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Recommend.ascx.cs">
+      <DependentUpon>Recommend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Recommend.ascx.designer.cs">
+      <DependentUpon>Recommend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Rank.ascx.cs">
+      <DependentUpon>Rank.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Rank.ascx.designer.cs">
+      <DependentUpon>Rank.ascx</DependentUpon>
     </Compile>
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
@@ -1480,6 +1499,7 @@
     <Content Include="Js\libs\artDialog\package.json" />
     <Content Include="Js\libs\artDialog\README.md" />
     <Content Include="ashx\User.ashx" />
+    <Content Include="ashx\Recommend.ashx" />
     <None Include="Properties\PublishProfiles\eedscqjy.pubxml" />
   </ItemGroup>
   <PropertyGroup>

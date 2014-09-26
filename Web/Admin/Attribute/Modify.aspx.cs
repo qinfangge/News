@@ -17,40 +17,40 @@ namespace CMS.Web.Admin.Attribute
     public partial class Modify : CommonPage
     {       
 
-        		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)
 			{
 				#warning 代码生成提示：显示页面,请检查确认该语句是否正确
-				ShowInfo();
+                if (Request.Params["id"] != null && Request.Params["id"].Trim() != "")
+                {
+                    int id = (Convert.ToInt32(Request.Params["id"]));
+                    ShowInfo(id);
+                }
 			}
 		}
-			
-	private void ShowInfo()
-	{
-		CMS.BLL.Attribute bll=new CMS.BLL.Attribute();
-		CMS.Model.Attribute model=bll.GetModel();
-		this.txtid.Text=model.id.ToString();
-		this.txtname.Text=model.name;
-		this.txtstyle.Text=model.style;
 
-	}
+        private void ShowInfo(int id)
+        {
+            CMS.BLL.Attribute bll = new CMS.BLL.Attribute();
+            CMS.Model.Attribute model = bll.GetModel(id);
+            this.lblid.Text = model.id.ToString();
+            this.txtname.Text = model.name;
+            this.txtcssClass.Text = model.cssClass;
 
+        }
 		public void btnSave_Click(object sender, EventArgs e)
 		{
 			
 			string strErr="";
-			if(!PageValidate.IsNumber(txtid.Text))
-			{
-				strErr+="id格式错误！\\n";	
-			}
+			
 			if(this.txtname.Text.Trim().Length==0)
 			{
-				strErr+="name不能为空！\\n";	
+				strErr+="属性名称不能为空！\\n";	
 			}
-			if(this.txtstyle.Text.Trim().Length==0)
+            if (this.txtcssClass.Text.Trim().Length == 0)
 			{
-				strErr+="style不能为空！\\n";	
+				strErr+="css类名不能为空！\\n";	
 			}
 
 			if(strErr!="")
@@ -58,13 +58,13 @@ namespace CMS.Web.Admin.Attribute
 				MessageBoxTip.Alert(this,strErr);
 				return;
 			}
-			int id=int.Parse(this.txtid.Text);
+			int id=int.Parse(this.lblid.Text);
 			string name=this.txtname.Text;
-			string style=this.txtstyle.Text;
+            string cssClass = this.txtcssClass.Text;
 			CMS.Model.Attribute model=new CMS.Model.Attribute();
 			model.id=id;
 			model.name=name;
-			model.style=style;
+            model.cssClass = cssClass;
 
 			CMS.BLL.Attribute bll=new CMS.BLL.Attribute();
 			bll.Update(model);

@@ -17,4 +17,11 @@
   <cache>
     <dir>/App_Data/Cache/</dir>
   </cache>
+  <smtp>
+    <host>smtp.qq.com</host>
+    <account>fqmhw@qq.com</account>
+    <password>yangyang@851025</password>
+    <from>fqmhw@qq.com</from>
+    <fromName>封丘门户网</fromName>
+  </smtp>
 </config>

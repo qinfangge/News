@@ -1,17 +1,34 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* News_Attribute.cs
+*
+* 功 能： N/A
+* 类 名： News_Attribute
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/8/31 12:40:07   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
-using Maticsoft.DBUtility;//Please add references
+using Maticsoft.DBUtility;
+using System.Collections.Generic;//Please add references
 namespace CMS.DAL
 {
-	/// <summary>
-	/// 数据访问类:Attribute
-	/// </summary>
-	public partial class Attribute
-	{
-		public Attribute()
-		{}
+    /// <summary>
+    /// 数据访问类:News_Attribute
+    /// </summary>
+    public partial class News_Attribute
+    {
+        public News_Attribute()
+        { }
         #region  BasicMethod
 
         /// <summary>
@@ -19,7 +36,7 @@ namespace CMS.DAL
         /// </summary>
         public int GetMaxId()
         {
-            return DbHelperSQL.GetMaxID("id", "Attribute");
+            return DbHelperSQL.GetMaxID("id", "News_Attribute");
         }
 
         /// <summary>
@@ -28,7 +45,7 @@ namespace CMS.DAL
         public bool Exists(int id)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) from Attribute");
+            strSql.Append("select count(1) from News_Attribute");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
 					new SqlParameter("@id", SqlDbType.Int,4)
@@ -42,19 +59,19 @@ namespace CMS.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(CMS.Model.Attribute model)
+        public int Add(CMS.Model.News_Attribute model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("insert into Attribute(");
-            strSql.Append("name,cssClass)");
+            strSql.Append("insert into News_Attribute(");
+            strSql.Append("NewsID,AttributeID)");
             strSql.Append(" values (");
-            strSql.Append("@name,@cssClass)");
+            strSql.Append("@NewsID,@AttributeID)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-					new SqlParameter("@name", SqlDbType.VarChar,50),
-					new SqlParameter("@cssClass", SqlDbType.VarChar,100)};
-            parameters[0].Value = model.name;
-            parameters[1].Value = model.cssClass;
+					new SqlParameter("@NewsID", SqlDbType.Int,4),
+					new SqlParameter("@AttributeID", SqlDbType.Int,4)};
+            parameters[0].Value = model.NewsID;
+            parameters[1].Value = model.AttributeID;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -69,19 +86,19 @@ namespace CMS.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(CMS.Model.Attribute model)
+        public bool Update(CMS.Model.News_Attribute model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update Attribute set ");
-            strSql.Append("name=@name,");
-            strSql.Append("cssClass=@cssClass");
+            strSql.Append("update News_Attribute set ");
+            strSql.Append("NewsID=@NewsID,");
+            strSql.Append("AttributeID=@AttributeID");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@name", SqlDbType.VarChar,50),
-					new SqlParameter("@cssClass", SqlDbType.VarChar,100),
+					new SqlParameter("@NewsID", SqlDbType.Int,4),
+					new SqlParameter("@AttributeID", SqlDbType.Int,4),
 					new SqlParameter("@id", SqlDbType.Int,4)};
-            parameters[0].Value = model.name;
-            parameters[1].Value = model.cssClass;
+            parameters[0].Value = model.NewsID;
+            parameters[1].Value = model.AttributeID;
             parameters[2].Value = model.id;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
@@ -102,7 +119,7 @@ namespace CMS.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from Attribute ");
+            strSql.Append("delete from News_Attribute ");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
 					new SqlParameter("@id", SqlDbType.Int,4)
@@ -125,7 +142,7 @@ namespace CMS.DAL
         public bool DeleteList(string idlist)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from Attribute ");
+            strSql.Append("delete from News_Attribute ");
             strSql.Append(" where id in (" + idlist + ")  ");
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rows > 0)
@@ -142,18 +159,18 @@ namespace CMS.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public CMS.Model.Attribute GetModel(int id)
+        public CMS.Model.News_Attribute GetModel(int id)
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 id,name,cssClass from Attribute ");
+            strSql.Append("select  top 1 id,NewsID,AttributeID from News_Attribute ");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
 					new SqlParameter("@id", SqlDbType.Int,4)
 			};
             parameters[0].Value = id;
 
-            CMS.Model.Attribute model = new CMS.Model.Attribute();
+            CMS.Model.News_Attribute model = new CMS.Model.News_Attribute();
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -169,22 +186,22 @@ namespace CMS.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public CMS.Model.Attribute DataRowToModel(DataRow row)
+        public CMS.Model.News_Attribute DataRowToModel(DataRow row)
         {
-            CMS.Model.Attribute model = new CMS.Model.Attribute();
+            CMS.Model.News_Attribute model = new CMS.Model.News_Attribute();
             if (row != null)
             {
                 if (row["id"] != null && row["id"].ToString() != "")
                 {
                     model.id = int.Parse(row["id"].ToString());
                 }
-                if (row["name"] != null)
+                if (row["NewsID"] != null && row["NewsID"].ToString() != "")
                 {
-                    model.name = row["name"].ToString();
+                    model.NewsID = int.Parse(row["NewsID"].ToString());
                 }
-                if (row["cssClass"] != null)
+                if (row["AttributeID"] != null && row["AttributeID"].ToString() != "")
                 {
-                    model.cssClass = row["cssClass"].ToString();
+                    model.AttributeID = int.Parse(row["AttributeID"].ToString());
                 }
             }
             return model;
@@ -196,8 +213,8 @@ namespace CMS.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select id,name,cssClass ");
-            strSql.Append(" FROM Attribute ");
+            strSql.Append("select id,NewsID,AttributeID ");
+            strSql.Append(" FROM News_Attribute ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -216,8 +233,8 @@ namespace CMS.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" id,name,cssClass ");
-            strSql.Append(" FROM Attribute ");
+            strSql.Append(" id,NewsID,AttributeID ");
+            strSql.Append(" FROM News_Attribute ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -232,7 +249,7 @@ namespace CMS.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) FROM Attribute ");
+            strSql.Append("select count(1) FROM News_Attribute ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -263,7 +280,7 @@ namespace CMS.DAL
             {
                 strSql.Append("order by T.id desc");
             }
-            strSql.Append(")AS Row, T.*  from Attribute T ");
+            strSql.Append(")AS Row, T.*  from News_Attribute T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 strSql.Append(" WHERE " + strWhere);
@@ -288,7 +305,7 @@ namespace CMS.DAL
                     new SqlParameter("@OrderType", SqlDbType.Bit),
                     new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
                     };
-            parameters[0].Value = "Attribute";
+            parameters[0].Value = "News_Attribute";
             parameters[1].Value = "id";
             parameters[2].Value = PageSize;
             parameters[3].Value = PageIndex;
@@ -299,64 +316,68 @@ namespace CMS.DAL
         }*/
 
         #endregion  BasicMethod
-
-		#region  ExtensionMethod
+        #region  ExtensionMethod
         /// <summary>
-        /// 分页获取数据列表 for sql 2000
+        /// 增加多条数据
         /// </summary>
-        public DataSet GetListByPage(string condition, string order, int pageSize, int currentPage, bool isGeneral)
+        public void Add(int newsID, System.Collections.Generic.List<int> attributes)
         {
-            string condition2 = condition == "" ? "" : " AND " + condition;
-            condition = condition == "" ? "" : "where " + condition;
-            order = order == "" ? "" : " order by " + order;
-            //            string sql = string.Format(@"SELECT TOP  {0}  *
-            //                            FROM product
-            //                            WHERE id NOT IN
-            //                                        (
-            //                                        SELECT TOP  ({0} *( {1} -1)) id FROM product {2} {3}
-            //                                        )
-            //                            {4} {3}", pageSize, currentPage, condition, order, condition2);
+            DeleteListByNewsID(newsID);
+            
 
-            string strSql = string.Format(@"SELECT TOP  {0}  *
-                            FROM Attribute
-                            WHERE id NOT IN
-                                        (
-                                        SELECT TOP  {1} id FROM Attribute {2} {3}
-                                        )
-                            {4} {3}", pageSize, pageSize * (currentPage - 1), condition, order, condition2);
+                foreach (var item in attributes)
+                {
+                    CMS.Model.News_Attribute model = new Model.News_Attribute();
+                    model.AttributeID = item;
+                    model.NewsID = newsID;
 
-            return DbHelperSQL.Query(strSql);
-
-        }
-
-        /// <summary>
-        /// 获取前几条数据
-        /// </summary>
-        /// <param name="strWhere"></param>
-        /// <param name="orderby"></param>
-        /// <param name="number"></param>
-        /// <returns></returns>
-        public DataSet GetTopList(string strWhere, string orderby, int number)
-        {
-            //string strWhere2 = strWhere == "" ? "" : " AND " + strWhere;
-            strWhere = strWhere == "" ? "" : "where " + strWhere;
-
-            orderby = orderby == "" ? "" : " order by " + orderby;
-
-            string strSql = string.Format(@"SELECT TOP  {0}  *
-                            FROM Attribute
-                             {1} {2}", number, strWhere, orderby);
-
-            return DbHelperSQL.Query(strSql);
+                    this.Add(model);
+                }
+            
 
         }
 
 
+        /// <summary>
+        /// 获得文章的属性
+        /// </summary>
+        public List<int> GetAttribute(int newsID)
+        {
+            List<int> list = new List<int>();
+            DataSet ds= this.GetList("newsID=" + newsID);
+            if (ds != null && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    list.Add(int.Parse(row["attributeID"].ToString()));
+                }
+            }
+
+           return list;
+        }
 
 
 
+        /// <summary>
+        /// 批量删除数据
+        /// </summary>
+        public bool DeleteListByNewsID(int newsID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from News_Attribute ");
+            strSql.Append(" where newsID=" + newsID);
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-		#endregion  ExtensionMethod
-	}
+        #endregion  ExtensionMethod
+    }
 }
 
